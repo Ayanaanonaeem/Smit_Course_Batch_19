@@ -1,0 +1,49 @@
+*{
+    margin: 0px;
+    padding: 0px;
+}
+.box1{
+    width:200px;
+    height:200px;
+    background-color: rgb(255, 0, 0);
+    animation:ayan 2s ease-in;
+    position: absolute;
+    /* right:0px; */
+    left:0px;
+    animation-fill-mode: forwards;
+    
+}
+.box2{
+    width:200px;
+    height:200px;
+    background-color: green;
+    animation:ayan 2s ease-in;
+    /* animation:ayan-2 2s ease-in; */
+    position: absolute;
+    animation-fill-mode: forwards;
+    right: 0px;
+    
+}
+
+@keyframes ayan {
+    from{
+       right:;
+    }  
+    to{
+      
+    }
+}
+@keyframes ayan-2 {
+    0%{
+     
+       right: 0px;
+    }
+    50%{
+        right: 42.3%;
+        
+    }
+    100%{
+        right: 42.3%;
+        opacity: 0.2;
+    }
+}
