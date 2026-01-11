@@ -1,0 +1,42 @@
+ /* <!-- id selecetor # --> Ye id se select krta */
+  #name{
+
+  }
+ 
+/* <!-- class selecetor .--> ye class se select krta hai */
+.name{
+
+}
+/* <!-- Universal selector * --> ye all over select krne ke liye usehota hai  */
+*{
+
+}
+
+/* <!-- type selector--> p h1 this is called type selector */
+P{
+
+}
+h1{
+
+}
+ /* <!-- child selector li>a --> li ke undar jo a hain unhe select krta hai */
+
+li>a{
+
+}
+/* <!-- Descendant seletor ul li --> li ko select krega */
+ul li{
+
+}
+/* <!-- Adjacent selector h1+p --> for targeting first p element in the h1 */
+h1+p{
+
+}
+ /* <!-- general sibling selector h1~p --> h1 ke undar jitne p hain unpr apply hojayega */ 
+ h1~p{
+
+ }
+ .ayan{
+    background-color: black;
+    color: rgb(255, 0, 0);
+ }
