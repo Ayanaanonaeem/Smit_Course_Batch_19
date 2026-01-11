@@ -17,8 +17,8 @@
     width:200px;
     height:200px;
     background-color: green;
-    animation:ayan 2s ease-in;
-    /* animation:ayan-2 2s ease-in; */
+    /* animation:ayan 2s ease-in; */
+    animation:ayan-2 2s ease-in;
     position: absolute;
     animation-fill-mode: forwards;
     right: 0px;
@@ -26,11 +26,17 @@
 }
 
 @keyframes ayan {
-    from{
-       right:;
-    }  
-    to{
-      
+       0%{
+     
+       left: 0px;
+    }
+    50%{
+        left: 42.3%;
+        
+    }
+    100%{
+        left: 42.3%;
+        opacity: 0.2;
     }
 }
 @keyframes ayan-2 {
