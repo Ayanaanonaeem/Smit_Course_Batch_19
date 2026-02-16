@@ -10,10 +10,10 @@ var cde="2"
 
 console.log(1+1+abc);
 
-// do string ke uper plus laagdo to woh concatenate hojatin hai 
+// do string ke bech plus laagdo to woh concatenate hojatin hai 
 
-// agr hum variable main number as a string rakhen to aur plus lagaden to woh concatenate hojata hai 
-// lkn age oi aur operation lagayen to woh chal jayega
+// agr hum variable main number as a string rakhen, aur plus lagaden to woh concatenate hojata hai 
+// lkn age koi aur operation lagayen to woh chal jayega
 
 // Prompt
 
