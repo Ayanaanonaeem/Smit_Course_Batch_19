@@ -1,12 +1,12 @@
 // Agr hum kisi character ka pata lagana ho ke woh kis index pr hai to hum charat use krgenge
 
-var userinput=prompt("Enter your name")
+// var userinput=prompt("Enter your name")
 
-var firstchar=userinput.charAt(0)
+// var firstchar=userinput.charAt(0)
  
-var lastchar=userinput.charAt(userinput.length-1)
+// var lastchar=userinput.charAt(userinput.length-1)
 
-console.log(firstchar+lastchar);
+// console.log(firstchar+lastchar);
 
 
 // for replacing the word from the paragraph we use replace
@@ -24,6 +24,30 @@ console.log(newpara);
 var newpara2=para.replaceAll("the","Meoww")
 
 console.log(newpara2);
+
+
+// ----------------------------for rounding numbers--------------------------------------------//
+
+
+// We have math.round to roundoff the numbers 
+
+var num=1.44093848
+console.log(Math.round(num));
+
+
+// Agr hum chahte hain ke uper number ki traf round off hojaye to hum math.ceil use krenge
+
+console.log(Math.ceil(num)); //output 2
+
+// Aur agr hum chahte hain niche ki traf round off hojaye to hum math.floor use krenge 
+
+console.log(Math.floor(num));
+
+
+// Inke name se hi pata chal raha hai ke hum uper round off kisse krsakte hain aur niche round of kisse
+
+
+
 
 
 
