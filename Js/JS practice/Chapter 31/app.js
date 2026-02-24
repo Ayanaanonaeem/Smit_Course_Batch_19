@@ -46,7 +46,16 @@ console.log(Math.floor(fdiff));
 
  
 
-// ------------------------- W
+// ------------------------- chapter 34-------------------------//
+// We can also give manually everything in current date as you see in the below eg 
+
+var newday=rightnow.setFullYear(2003)
+console.log(newday);
+rightnow.setHours(23)
+rightnow.setMonth(8)
+console.log(rightnow);
+
+
 
 
 
