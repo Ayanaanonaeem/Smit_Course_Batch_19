@@ -34,7 +34,7 @@ case "mango":
 break;
 
 default:
-    console.log("This is definitely a peach");
+    console.log("This is definitely a Mango");
 break; 
         
 }
