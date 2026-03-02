@@ -2,10 +2,25 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width= , initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 </head>
 <body>
-    hhhhhh
+    Email: <br>
+    <input id="input" type="text" onfocus="makeblue()" onblur="this.style.backgroundColor='pink'">
+
+    <form onsubmit="checkfieldvalue('email')">
+        email <br>
+       <input type="email" name="" id="email">
+       <input type="submit" value="Submit">
+    </form>
+
+    <form>
+    ZIP:<br>
+    <input type="text" id="zip" onBlur="fillCity();"><br>
+    City:<br>
+    <input type="text" id="city">
+    </form>
+    <script src="app.js"></script>
 </body>
 </html>
