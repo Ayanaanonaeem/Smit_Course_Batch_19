@@ -1,0 +1,16 @@
+h1{
+  font-size: 20px;
+  color: red;
+}
+#bulb{
+    background-color: yellow;
+    height:300px;
+    width:300px;
+    border: 3px solid black;
+    border-radius: 50%;
+}
+
+#btn{
+    width: 300px;
+    height: 50px;
+}
