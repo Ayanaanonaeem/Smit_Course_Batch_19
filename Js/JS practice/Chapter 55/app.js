@@ -25,3 +25,12 @@ para1txt.innerHTML="hello"
 
 
 // but ye hamen array main dega not in a single value 
+
+
+// ------------------------chapter 57------------------------
+
+// If we want to target a specific div paragraphs so you can do like this 
+var div=document.getElementById("div")
+var para2=div.getElementsByTagName("p")
+console.log(para2);
+
