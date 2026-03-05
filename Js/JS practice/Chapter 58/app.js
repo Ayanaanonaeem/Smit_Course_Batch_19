@@ -59,3 +59,34 @@ heading.forEach(function(e) {
 
 // innerHTML ke undar hum pora tag dalsakte hain html ka 
 // but textcontent ke undar hum agr pora tag bhi likhen to woh as a text ayega 
+
+var lara=document.getElementById("lara")
+var nodes=lara.childNodes;
+console.log(nodes[1].textContent);
+console.log(nodes[3].nodeName); //you can find the tag name by using node name
+
+console.log(lara.childNodes.length); //you can also find the length of the parent element nodes
+
+
+
+
+// yhn pr div ke sth child hain kynke hr tag ke bd text node zaroor hota hai agr hamre div ka direct child p hoga to woh array pr 1 pe ayega kynke 0 pr hamara text node hoga 
+
+
+var head_2=document.getElementById("head")
+console.log(head_2.getAttribute("onclick"));
+
+// we can get any attribut in html using js
+
+
+// We can also get,change and remove the attribute from the html using js
+
+var div=document.getElementById("divhai")
+div.setAttribute("style","background-color:red") //this is how we can change the attribute
+
+
+div.removeAttribute("style") //this is how we can remove the attribute from html using js
+
+console.log(div);
+
+
