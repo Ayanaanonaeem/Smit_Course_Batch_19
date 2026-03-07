@@ -1,0 +1,52 @@
+*{
+    margin: 0px;
+    padding: 0px;
+}
+#first{
+    width: 15%;
+    flex-direction: column;
+    margin-top: 10px;
+}
+#first-input{
+    height: 25px;
+}
+#first-btn{
+    width:178px;
+    height: 40px;
+    margin-top: 10px;
+    border-radius: 20px;
+    background-color: blue;
+    color:white;
+    font-weight: bold;
+}
+.none{
+    display: none;
+}
+.flex{
+    display: flex;
+}
+
+#second{
+  gap: 20px;
+}
+
+.teams{
+   height:200px;
+   width:200px;
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   font-weight: bold;
+   font-size: 20px;
+   background:  linear-gradient(to bottom, #1e5799 0%,#2989d8 29%,#207cca 64%,#7db9e8 100%);
+   color: white;
+   border: 2px solid black;
+   border-radius:10px;
+   box-shadow:10px 10px 10px grey;
+   margin-top: 40px;
+}
+.teams:hover{
+    background: linear-gradient(to bottom, #1e5799 0%,#2989d8 3%,#2989d8 7%,#7db9e8 100%);
+    cursor: pointer;
+}
+
