@@ -49,4 +49,20 @@
     background: linear-gradient(to bottom, #1e5799 0%,#2989d8 3%,#2989d8 7%,#7db9e8 100%);
     cursor: pointer;
 }
+#third{
+  gap: 10px;
+  margin: 30px;
+}
 
+.toss{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height:150px;
+    width:150px;
+    background-color: #7db9e8;
+    border-radius: 50%;
+    font-weight: bold;
+    font-size: 30px;
+    
+}
