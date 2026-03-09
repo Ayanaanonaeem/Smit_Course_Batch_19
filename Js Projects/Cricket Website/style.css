@@ -52,7 +52,7 @@
 #third{
   gap: 10px;
   margin: 30px;
-  border: 1px solid black;
+  /* border: 1px solid black; */
   width:310px;
 }
 
@@ -68,3 +68,7 @@
     font-size: 30px;
     
 }
+#fourth{
+
+}
+

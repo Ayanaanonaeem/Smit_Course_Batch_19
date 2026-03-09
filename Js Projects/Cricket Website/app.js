@@ -7,6 +7,9 @@ const para=document.getElementsByClassName("teams")
 let selectedTeam;
 const thirdDiv=document.getElementById("third")
 const thirdDivPara=document.querySelectorAll(".toss")
+const bat=document.getElementById("bat")
+const bowl=document.getElementById("bowl")
+const fourthDiv=document.getElementById("fourth")
 
 firstBtn.addEventListener("click", function () {
 	if (firstInput.value == "") {
@@ -44,13 +47,16 @@ for (let i = 0; i < thirdDivPara.length; i++) {
     thirdDivPara[i].addEventListener("click",function() {
        if (randomTossNumber==2) {
 		 alert("You won the toss now choose bat or ball")
+		 thirdDiv.classList.replace("flex","none")
+		 fourthDiv.classList.replace("none","flex")
 	   }else if (randomTossNumber==1) {
 		 alert(`You loss the toss and the computer selected to ${randomSelection} first`)
-	   } 
-       
-	   
-    })
-    
+		 thirdDiv.classList.replace("flex","none")
+
+	   } 	   
+    })    
 }
+
+
 
 
