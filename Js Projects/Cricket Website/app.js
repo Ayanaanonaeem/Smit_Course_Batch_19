@@ -6,7 +6,7 @@ const secondDiv = document.getElementById("second");
 const para=document.getElementsByClassName("teams")
 let selectedTeam;
 const thirdDiv=document.getElementById("third")
-// const thirdDivPara=document.querySelectorAll(".toss")
+const thirdDivPara=document.querySelectorAll(".toss")
 
 firstBtn.addEventListener("click", function () {
 	if (firstInput.value == "") {
@@ -32,9 +32,25 @@ for (let i = 0; i < para.length; i++) {
 // alert("now it a time for toss chose one")
 
 var randomTossNumber=Math.ceil(Math.random()*2)
+var anotherRandomNum=Math.ceil(Math.random()*2)
+var batBallArray=["none","bat","ball"]
 
-function checkToss(params) {
-	
+var randomSelection=batBallArray[Math.ceil(Math.random()*2)]
+
+
+
+
+for (let i = 0; i < thirdDivPara.length; i++) {
+    thirdDivPara[i].addEventListener("click",function() {
+       if (randomTossNumber==2) {
+		 alert("You won the toss now choose bat or ball")
+	   }else if (randomTossNumber==1) {
+		 alert(`You loss the toss and the computer selected to ${randomSelection} first`)
+	   } 
+       
+	   
+    })
+    
 }
 
 

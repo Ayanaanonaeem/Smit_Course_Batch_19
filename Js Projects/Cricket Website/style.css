@@ -52,6 +52,8 @@
 #third{
   gap: 10px;
   margin: 30px;
+  border: 1px solid black;
+  width:310px;
 }
 
 .toss{
