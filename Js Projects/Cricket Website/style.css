@@ -90,5 +90,6 @@
     font-weight: bolder;
     cursor: pointer;
 
+}#fifth{
+    flex-direction: column;
 }
-

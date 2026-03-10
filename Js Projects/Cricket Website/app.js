@@ -12,9 +12,15 @@ const bowl=document.getElementById("bowl")
 const fourthDiv=document.getElementById("fourth")
 let userselection;
 const fifthDiv=document.getElementById("fifth")
+let paragraph;        
+let paragraph_2;        
+let paragraph_3;        
 
 let myobj={
-	name:"ayan",
+	score:0,
+	out:0,
+	target:0,
+
 }
 
 firstBtn.addEventListener("click", function () {
@@ -24,6 +30,12 @@ firstBtn.addEventListener("click", function () {
 		playerName = firstInput.value;
 		firstDiv.classList.replace("flex", "none");
         secondDiv.classList.replace("none","flex")
+		 paragraph=document.createElement("p")
+         paragraph.textContent="Player name: "+playerName;
+	    fifthDiv.appendChild(paragraph)
+
+        
+
 	}
 });
 
@@ -32,7 +44,11 @@ for (let i = 0; i < para.length; i++) {
        selectedTeam=para[i].innerText
        secondDiv.classList.replace("flex","none")
 	   thirdDiv.classList.replace("none","flex")
-       
+	    paragraph_2=document.createElement("p")
+        paragraph_2.textContent="Your Team: "+selectedTeam;
+	    fifthDiv.appendChild(paragraph_2)
+
+        
 	   
     })
     
@@ -66,10 +82,16 @@ for (let i = 0; i < thirdDivPara.length; i++) {
 bat.addEventListener("click",function() {
 	
 	userselection=bat.innerText
-	console.log(userselection);
+	// console.log(userselection);
 	alert("You are batting first")	
+        
 	fourthDiv.classList.replace("flex","none")
 	fifthDiv.classList.replace("none","flex")
+	paragraph_3=document.createElement("p")
+	paragraph_3.textContent="You are "+userselection+"ing";
+	fifthDiv.appendChild(paragraph_3)
+
+	
 })
 
 bowl.addEventListener("click",function() {
@@ -80,9 +102,12 @@ bowl.addEventListener("click",function() {
 	fourthDiv.classList.replace("flex","none")
 	fifthDiv.classList.replace("none","flex")
 
-})
+	paragraph_3=document.createElement("p")
+	paragraph_3.textContent="You are "+userselection+"ing";
+	fifthDiv.appendChild(paragraph_3)
+	
 
-console.log(Object.name);
+})
 
 
 
