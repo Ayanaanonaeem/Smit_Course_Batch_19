@@ -10,6 +10,12 @@ const thirdDivPara=document.querySelectorAll(".toss")
 const bat=document.getElementById("bat")
 const bowl=document.getElementById("bowl")
 const fourthDiv=document.getElementById("fourth")
+let userselection;
+const fifthDiv=document.getElementById("fifth")
+
+let myobj={
+	name:"ayan",
+}
 
 firstBtn.addEventListener("click", function () {
 	if (firstInput.value == "") {
@@ -57,6 +63,26 @@ for (let i = 0; i < thirdDivPara.length; i++) {
     })    
 }
 
+bat.addEventListener("click",function() {
+	
+	userselection=bat.innerText
+	console.log(userselection);
+	alert("You are batting first")	
+	fourthDiv.classList.replace("flex","none")
+	fifthDiv.classList.replace("none","flex")
+})
+
+bowl.addEventListener("click",function() {
+	
+	userselection=bowl.innerText
+	console.log(userselection);
+	alert("You are bowling first")	
+	fourthDiv.classList.replace("flex","none")
+	fifthDiv.classList.replace("none","flex")
+
+})
+
+console.log(Object.name);
 
 
 

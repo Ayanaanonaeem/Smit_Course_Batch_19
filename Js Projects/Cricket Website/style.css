@@ -68,7 +68,27 @@
     font-size: 30px;
     
 }
+.toss:hover{
+   background-color: #0091ff;
+   color:#000000;
+   cursor: pointer;
+
+}
 #fourth{
+   gap: 10px;
+   margin: 10px;
+}
+.do{
+    width: 100px;
+    height:100px;
+    border-radius: 20px;
+    background-color: turquoise;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-weight: bolder;
+    cursor: pointer;
 
 }
 
