@@ -114,23 +114,26 @@ bowl.addEventListener("click",function() {
 
 })
 
-let scoreAndwicketRandomNum
-
-console.log();
+let scoreAndwicketRandomNum=Math.floor(Math.random()*2)
+if (scoreAndwicketRandomNum==0) {
+	
+}
 
 if (fifthDiv.className=="flex") {
-	document.addEventListener("keydown",function (e) {
-	if (e.key==" ") {
+	console.log("hello");
+	
+} else {
+	console.log("meow");
+	
+}
+
+	document.addEventListener("keypress",function (e) {
+	if (e.key=="j") {
 		
+		console.log("hello");
 		
 	}
 
 	
 })
-
-} else {
-	
-}
-
-
 
