@@ -13,6 +13,8 @@ const fourthDiv=document.getElementById("fourth")
 let userselection;
 const fifthDiv=document.getElementById("fifth")
 const sixthDiv=document.getElementById("sixth")
+let score=document.getElementById("score")
+let wicket=document.getElementById("wicket")
 let paragraph;        
 let paragraph_2;        
 let paragraph_3;        
@@ -24,7 +26,7 @@ let myobj={
  
 }
 const batting={
-	wicket:["bowled","Lbw","Caught","Runout"],
+	wicket:["bowled","lbw","caught","runout"],
 	score:[0,1,2,3,4,5,6]
 }
 firstBtn.addEventListener("click", function () {
@@ -82,6 +84,17 @@ for (let i = 0; i < thirdDivPara.length; i++) {
 	   } 	   
     })    
 }
+let scoreAndwicketRandomNum;
+let wicketRandomNum;
+var wicketName;
+let scoreRandomNum;
+var scoreName;
+var currentWicket;
+var currentscore;
+var targetchild;
+var target;
+let numTarget;
+
 
 bat.addEventListener("click",function() {
 	
@@ -94,6 +107,47 @@ bat.addEventListener("click",function() {
 	paragraph_3=document.createElement("p")
 	paragraph_3.textContent="You are "+userselection+"ing";
 	fifthDiv.appendChild(paragraph_3)
+
+   document.addEventListener("keypress",function (e) {
+	if (e.key==" ") {		
+		scoreAndwicketRandomNum=Math.floor(Math.random()*2)
+		wicketRandomNum=Math.floor(Math.random()*4)
+		wicketName=batting.wicket[wicketRandomNum]
+		if (scoreAndwicketRandomNum==0) {
+			currentWicket=Number(wicket.innerText)+1
+			wicket.innerText=currentWicket
+			alert("you are "+wicketName)
+			if (currentWicket==11) {
+				alert("So you are all out click okay for next innings")
+				wicket.innerText=0
+				target=score.innerText
+				numTarget=Number(target)+1
+
+				targetchild=document.createElement("h2")
+				targetchild.textContent="Target :"+numTarget
+				score.innerText=0
+				fifthDiv.appendChild(targetchild)
+				// console.log(score.innerText);
+				
+				
+				
+			}
+			
+			
+		} else {
+			scoreRandomNum=Math.floor(Math.random()*7)
+			scoreName=batting.score[scoreRandomNum]
+			currentscore=Number(score.innerHTML)+scoreName
+			score.innerText=currentscore
+			alert("you have made "+scoreName+" run")
+		}
+		
+		
+	}
+
+	
+})
+
 
 	
 })
@@ -114,26 +168,11 @@ bowl.addEventListener("click",function() {
 
 })
 
-let scoreAndwicketRandomNum=Math.floor(Math.random()*2)
-if (scoreAndwicketRandomNum==0) {
-	
-}
+console.log(currentWicket);
 
-if (fifthDiv.className=="flex") {
-	console.log("hello");
-	
-} else {
-	console.log("meow");
-	
-}
 
-	document.addEventListener("keypress",function (e) {
-	if (e.key=="j") {
-		
-		console.log("hello");
-		
-	}
+
+
+
 
 	
-})
-
