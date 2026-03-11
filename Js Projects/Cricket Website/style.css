@@ -93,3 +93,6 @@
 }#fifth{
     flex-direction: column;
 }
+#fifth > h1{
+   text-align: center   ;
+}

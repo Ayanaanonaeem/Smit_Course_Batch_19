@@ -12,6 +12,7 @@ const bowl=document.getElementById("bowl")
 const fourthDiv=document.getElementById("fourth")
 let userselection;
 const fifthDiv=document.getElementById("fifth")
+const sixthDiv=document.getElementById("sixth")
 let paragraph;        
 let paragraph_2;        
 let paragraph_3;        
@@ -20,9 +21,12 @@ let myobj={
 	score:0,
 	out:0,
 	target:0,
-
+ 
 }
-
+const batting={
+	wicket:["bowled","Lbw","Caught","Runout"],
+	score:[0,1,2,3,4,5,6]
+}
 firstBtn.addEventListener("click", function () {
 	if (firstInput.value == "") {
 		alert("please enter a value first");
@@ -105,9 +109,28 @@ bowl.addEventListener("click",function() {
 	paragraph_3=document.createElement("p")
 	paragraph_3.textContent="You are "+userselection+"ing";
 	fifthDiv.appendChild(paragraph_3)
+
 	
 
 })
+
+let scoreAndwicketRandomNum
+
+console.log();
+
+if (fifthDiv.className=="flex") {
+	document.addEventListener("keydown",function (e) {
+	if (e.key==" ") {
+		
+		
+	}
+
+	
+})
+
+} else {
+	
+}
 
 
 
