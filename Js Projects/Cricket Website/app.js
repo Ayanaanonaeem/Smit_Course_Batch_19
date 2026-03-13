@@ -122,6 +122,7 @@ function Batting() {
 					para4.innerText = "Target: " + myobj.target;
 					score.innerText = 0;
 					myobj.score = 0;
+					Bowling()
 					 
 
 					// console.log(score.innerText);
