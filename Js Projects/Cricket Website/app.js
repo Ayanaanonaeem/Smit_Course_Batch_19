@@ -81,16 +81,15 @@ for (let i = 0; i < thirdDivPara.length; i++) {
 			);
 			thirdDiv.classList.replace("flex", "none");
 			sixthDiv.classList.replace("none", "flex");
-			
-			sixthDiv.addEventListener("click",function () {
-				sixthDiv.classList.replace("flex","none")
-				if (randomSelection=="bat") {
-				
-					Batting()
+
+			sixthDiv.addEventListener("click", function () {
+				sixthDiv.classList.replace("flex", "none");
+				if (randomSelection == "bat") {
+					Batting();
 				} else {
-					Bowling()
+					Bowling();
 				}
-			})
+			});
 		}
 	});
 }
@@ -113,7 +112,6 @@ function Batting() {
 			if (scoreAndwicketRandomNum == 0) {
 				myobj.out = myobj.out + 1;
 				wicket.innerText = myobj.out;
-				console.log(myobj.out);
 
 				alert("you are " + wicketName);
 				if (myobj.out == 11) {
@@ -124,6 +122,9 @@ function Batting() {
 					para4.innerText = "Target: " + myobj.target;
 					score.innerText = 0;
 					myobj.score = 0;
+					if (myobj.target != 0) {
+						Bowling();
+					}
 
 					// console.log(score.innerText);
 				}
@@ -140,8 +141,7 @@ function Batting() {
 }
 function Bowling() {
 	userselection = bowl.innerText;
-	console.log(userselection);
-	alert("You are bowling first");
+	alert("You are bowling");
 	fourthDiv.classList.replace("flex", "none");
 	fifthDiv.classList.replace("none", "flex");
 	para3.innerText = userselection + "ing";
@@ -157,13 +157,16 @@ function Bowling() {
 				myobj.out = myobj.out + 1;
 				wicket.innerText = myobj.out;
 				if (myobj.target != 0) {
-					if (score >= myobj.target) {
+					console.log(myobj.score);
+					console.log(myobj.target);
+
+					if (myobj.target <= myobj.score) {
 						alert("congrats you won the Match");
 					}
 				}
 
 				alert("you are " + wicketName);
-				if (myobj.out == 11) {
+				if (myobj.out == 11 && myobj.score) {
 					alert("So you are all out click okay for next innings");
 					wicket.innerText = 0;
 					myobj.out = 0;
