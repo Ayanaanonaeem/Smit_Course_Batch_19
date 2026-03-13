@@ -122,9 +122,7 @@ function Batting() {
 					para4.innerText = "Target: " + myobj.target;
 					score.innerText = 0;
 					myobj.score = 0;
-					if (myobj.target != 0) {
-						Bowling();
-					}
+					 
 
 					// console.log(score.innerText);
 				}
@@ -157,16 +155,20 @@ function Bowling() {
 				myobj.out = myobj.out + 1;
 				wicket.innerText = myobj.out;
 				if (myobj.target != 0) {
-					console.log(myobj.score);
-					console.log(myobj.target);
-
 					if (myobj.target <= myobj.score) {
 						alert("congrats you won the Match");
+						fifthDiv.classList.replace("flex","none")
+					}
+					else if(myobj.out==11){
+						alert("you lose the match")
+						fifthDiv.classList.replace("flex","none")
+
+						
 					}
 				}
 
 				alert("you are " + wicketName);
-				if (myobj.out == 11 && myobj.score) {
+				if (myobj.out == 11 ) {
 					alert("So you are all out click okay for next innings");
 					wicket.innerText = 0;
 					myobj.out = 0;
