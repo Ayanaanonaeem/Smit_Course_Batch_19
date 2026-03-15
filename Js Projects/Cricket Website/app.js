@@ -163,6 +163,7 @@ function Bowling() {
 					else if(myobj.out==11){
 						alert("you lose the match")
 						fifthDiv.classList.replace("flex","none")
+						sixthDiv.innerHTML.replace("flex","none")
 
 						
 					}
