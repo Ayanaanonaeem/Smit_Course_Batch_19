@@ -112,17 +112,20 @@ function Batting() {
 			if (scoreAndwicketRandomNum == 0) {
 				myobj.out = myobj.out + 1;
 				wicket.innerText = myobj.out;
-
 				alert("you are " + wicketName);
+                checkingTarget()
 				if (myobj.out == 11) {
 					alert("So you are all out click okay for next innings");
+					alert("Now you are bowling")
 					wicket.innerText = 0;
 					myobj.out = 0;
 					myobj.target = Number(score.innerText) + 1;
 					para4.innerText = "Target: " + myobj.target;
 					score.innerText = 0;
 					myobj.score = 0;
-					Bowling()
+                     
+					
+					
 					 
 
 					// console.log(score.innerText);
@@ -137,6 +140,21 @@ function Batting() {
 			}
 		}
 	});
+
+}
+
+function checkingTarget() {
+	if(myobj.target!=0){
+		if (myobj.score>=myobj.target) {
+			alert("You won the match")
+			fifthDiv.classList.replace("flex","none")
+		}
+		else if(myobj.wicket==11){
+			alert("You lose the match")
+			fifthDiv.classList.replace("flex","none")
+
+		}
+	}
 }
 function Bowling() {
 	userselection = bowl.innerText;
@@ -155,23 +173,13 @@ function Bowling() {
 			if (scoreAndwicketRandomNum == 0) {
 				myobj.out = myobj.out + 1;
 				wicket.innerText = myobj.out;
-				if (myobj.target != 0) {
-					if (myobj.target <= myobj.score) {
-						alert("congrats you won the Match");
-						fifthDiv.classList.replace("flex","none")
-					}
-					else if(myobj.out==11){
-						alert("you lose the match")
-						fifthDiv.classList.replace("flex","none")
-						sixthDiv.innerHTML.replace("flex","none")
-
-						
-					}
-				}
+				
 
 				alert("you are " + wicketName);
+				checkingTarget()
 				if (myobj.out == 11 ) {
 					alert("So you are all out click okay for next innings");
+					alert("Now you are batting")
 					wicket.innerText = 0;
 					myobj.out = 0;
 					myobj.target = Number(score.innerText) + 1;
