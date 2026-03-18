@@ -104,58 +104,45 @@ function Batting() {
 	para1.innerText = "Player name:" + playerName;
 	para2.innerText = "Selected Team:" + selectedTeam;
 
-	document.addEventListener("keypress", function (e) {
-		if (e.key == " ") {
-			scoreAndwicketRandomNum = Math.floor(Math.random() * 2);
-			wicketRandomNum = Math.floor(Math.random() * 4);
-			wicketName = batting.wicket[wicketRandomNum];
-			if (scoreAndwicketRandomNum == 0) {
-				myobj.out = myobj.out + 1;
-				wicket.innerText = myobj.out;
-				alert("you are " + wicketName);
-                checkingTarget()
-				if (myobj.out == 11) {
-					alert("So you are all out click okay for next innings");
-					alert("Now you are bowling")
-					wicket.innerText = 0;
-					myobj.out = 0;
-					myobj.target = Number(score.innerText) + 1;
-					para4.innerText = "Target: " + myobj.target;
-					score.innerText = 0;
-					myobj.score = 0;
-                     
-					
-					
-					 
+	document.addEventListener("keypress", handleKeyPress)
+	function handleKeyPress(e) {
+    if (e.key == " ") {
+        scoreAndwicketRandomNum = Math.floor(Math.random() * 2);
+        wicketRandomNum = Math.floor(Math.random() * 4);
+        wicketName = batting.wicket[wicketRandomNum];
 
-					// console.log(score.innerText);
-				}
-			} else {
-				scoreRandomNum = Math.floor(Math.random() * 7);
-				scoreName = batting.score[scoreRandomNum];
-				myobj.score = Number(score.innerHTML) + scoreName;
-				score.innerText = myobj.score;
+        if (scoreAndwicketRandomNum == 0) {
+            myobj.out = myobj.out + 1;
+            wicket.innerText = myobj.out;
+            alert("you are " + wicketName);
+            checkingTarget();
 
-				alert("you have made " + scoreName + " run");
-			}
-		}
-	});
+            if (myobj.out == 11) {
+                alert("So you are all out click okay for next innings");
+                alert("Now you are bowling");
+
+                wicket.innerText = 0;
+                myobj.out = 0;
+                myobj.target = Number(score.innerText) + 1;
+                para4.innerText = "Target: " + myobj.target;
+                score.innerText = 0;
+                myobj.score = 0;
+            }
+        } else {
+            scoreRandomNum = Math.floor(Math.random() * 7);
+            scoreName = batting.score[scoreRandomNum];
+            myobj.score = Number(score.innerHTML) + scoreName;
+            score.innerText = myobj.score;
+
+            alert("you have made " + scoreName + " run");
+            checkingTarget();
+        }
+    }
+}
 
 }
 
-function checkingTarget() {
-	if(myobj.target!=0){
-		if (myobj.score>=myobj.target) {
-			alert("You won the match")
-			fifthDiv.classList.replace("flex","none")
-		}
-		else if(myobj.wicket==11){
-			alert("You lose the match")
-			fifthDiv.classList.replace("flex","none")
 
-		}
-	}
-}
 function Bowling() {
 	userselection = bowl.innerText;
 	alert("You are bowling");
@@ -165,38 +152,62 @@ function Bowling() {
 	para1.innerText = "Player name:" + playerName;
 	para2.innerText = "Selected Team:" + selectedTeam;
 
-	document.addEventListener("keypress", function (e) {
-		if (e.key == " ") {
-			scoreAndwicketRandomNum = Math.floor(Math.random() * 2);
-			wicketRandomNum = Math.floor(Math.random() * 4);
-			wicketName = batting.wicket[wicketRandomNum];
-			if (scoreAndwicketRandomNum == 0) {
-				myobj.out = myobj.out + 1;
-				wicket.innerText = myobj.out;
-				
+	document.addEventListener("keypress", handleKeyPressGame)
+	function handleKeyPressGame(e) {
+    if (e.key == " ") {
+        scoreAndwicketRandomNum = Math.floor(Math.random() * 2);
+        wicketRandomNum = Math.floor(Math.random() * 4);
+        wicketName = batting.wicket[wicketRandomNum];
 
-				alert("you are " + wicketName);
-				checkingTarget()
-				if (myobj.out == 11 ) {
-					alert("So you are all out click okay for next innings");
-					alert("Now you are batting")
-					wicket.innerText = 0;
-					myobj.out = 0;
-					myobj.target = Number(score.innerText) + 1;
-					para4.innerText = "Target: " + myobj.target;
-					score.innerText = 0;
-					myobj.score = 0;
+        if (scoreAndwicketRandomNum == 0) {
+            myobj.out = myobj.out + 1;
+            wicket.innerText = myobj.out;
 
-					// console.log(score.innerText);
-				}
-			} else {
-				scoreRandomNum = Math.floor(Math.random() * 7);
-				scoreName = batting.score[scoreRandomNum];
-				myobj.score = Number(score.innerHTML) + scoreName;
-				score.innerText = myobj.score;
+            alert("you are " + wicketName);
+            checkingTarget();
 
-				alert("you have made " + scoreName + " run");
-			}
+            if (myobj.out == 11) {
+                alert("So you are all out click okay for next innings");
+                alert("Now you are batting");
+
+                wicket.innerText = 0;
+                myobj.out = 0;
+                myobj.target = Number(score.innerText) + 1;
+                para4.innerText = "Target: " + myobj.target;
+                score.innerText = 0;
+                myobj.score = 0;
+
+                // 🔥 remove event here if needed
+                document.removeEventListener("keypress", handleKeyPressGame);
+            }
+        } else {
+            scoreRandomNum = Math.floor(Math.random() * 7);
+            scoreName = batting.score[scoreRandomNum];
+            myobj.score = Number(score.innerHTML) + scoreName;
+            score.innerText = myobj.score;
+
+            alert("you have made " + scoreName + " run");
+            checkingTarget();
+        }
+    }
+}
+}
+
+function checkingTarget() {
+	if(myobj.target!=0){
+		if (myobj.score>=myobj.target) {
+			alert("You won the match")
+			document.removeEventListener("keypress",handleKeyPress)
+			document.removeEventListener("keypress",handleKeyPressGame)
+			fifthDiv.classList.replace("flex","none")
 		}
-	});
+		else if(myobj.out==11){
+			alert("You lose the match")
+				document.removeEventListener("keypress",handleKeyPress)
+			document.removeEventListener("keypress",handleKeyPressGame)	
+			fifthDiv.classList.replace("flex","none")
+
+
+		}
+	}
 }
