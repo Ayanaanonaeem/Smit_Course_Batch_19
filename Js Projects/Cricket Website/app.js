@@ -93,19 +93,8 @@ for (let i = 0; i < thirdDivPara.length; i++) {
 		}
 	});
 }
-function Batting() {
-	userselection = bat.innerText;
-	// console.log(userselection);
-	alert("You are batting first");
-
-	fourthDiv.classList.replace("flex", "none");
-	fifthDiv.classList.replace("none", "flex");
-	para3.innerText = userselection + "ting";
-	para1.innerText = "Player name:" + playerName;
-	para2.innerText = "Selected Team:" + selectedTeam;
-
-	document.addEventListener("keypress", handleKeyPress)
-	function handleKeyPress(e) {
+var flag=0
+function handleKeyPress(e) {
     if (e.key == " ") {
         scoreAndwicketRandomNum = Math.floor(Math.random() * 2);
         wicketRandomNum = Math.floor(Math.random() * 4);
@@ -117,7 +106,7 @@ function Batting() {
             alert("you are " + wicketName);
             checkingTarget();
 
-            if (myobj.out == 11) {
+            if (myobj.out == 11 && flag==0) {
                 alert("So you are all out click okay for next innings");
                 alert("Now you are bowling");
 
@@ -138,22 +127,28 @@ function Batting() {
             checkingTarget();
         }
     }
+
+
 }
 
-}
+function Batting() {
+	userselection = bat.innerText;
+	// console.log(userselection);
+	alert("You are batting first");
 
-
-function Bowling() {
-	userselection = bowl.innerText;
-	alert("You are bowling");
 	fourthDiv.classList.replace("flex", "none");
 	fifthDiv.classList.replace("none", "flex");
-	para3.innerText = userselection + "ing";
+	para3.innerText = userselection + "ting";
 	para1.innerText = "Player name:" + playerName;
 	para2.innerText = "Selected Team:" + selectedTeam;
 
-	document.addEventListener("keypress", handleKeyPressGame)
-	function handleKeyPressGame(e) {
+	document.addEventListener("keypress", handleKeyPress)
+	
+
+
+}
+
+function handleKeyPressGame(e) {
     if (e.key == " ") {
         scoreAndwicketRandomNum = Math.floor(Math.random() * 2);
         wicketRandomNum = Math.floor(Math.random() * 4);
@@ -166,7 +161,7 @@ function Bowling() {
             alert("you are " + wicketName);
             checkingTarget();
 
-            if (myobj.out == 11) {
+            if (myobj.out == 11 && flag==0) {
                 alert("So you are all out click okay for next innings");
                 alert("Now you are batting");
 
@@ -176,9 +171,6 @@ function Bowling() {
                 para4.innerText = "Target: " + myobj.target;
                 score.innerText = 0;
                 myobj.score = 0;
-
-                // 🔥 remove event here if needed
-                document.removeEventListener("keypress", handleKeyPressGame);
             }
         } else {
             scoreRandomNum = Math.floor(Math.random() * 7);
@@ -191,20 +183,29 @@ function Bowling() {
         }
     }
 }
+function Bowling() {
+	userselection = bowl.innerText;
+	alert("You are bowling");
+	fourthDiv.classList.replace("flex", "none");
+	fifthDiv.classList.replace("none", "flex");
+	para3.innerText = userselection + "ing";
+	para1.innerText = "Player name:" + playerName;
+	para2.innerText = "Selected Team:" + selectedTeam;
+
+	document.addEventListener("keypress", handleKeyPressGame)
+	
+
 }
 
 function checkingTarget() {
 	if(myobj.target!=0){
 		if (myobj.score>=myobj.target) {
 			alert("You won the match")
-			document.removeEventListener("keypress",handleKeyPress)
-			document.removeEventListener("keypress",handleKeyPressGame)
 			fifthDiv.classList.replace("flex","none")
 		}
-		else if(myobj.out==11){
+	    else if(myobj.out==11){
 			alert("You lose the match")
-				document.removeEventListener("keypress",handleKeyPress)
-			document.removeEventListener("keypress",handleKeyPressGame)	
+			flag++
 			fifthDiv.classList.replace("flex","none")
 
 
