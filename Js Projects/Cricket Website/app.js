@@ -200,11 +200,11 @@ function Bowling() {
 function checkingTarget() {
 	if(myobj.target!=0){
 		if (myobj.score>=myobj.target) {
-			alert("You won the match")
+			alert("You won the match finally")
 			fifthDiv.classList.replace("flex","none")
 		}
 	    else if(myobj.out==11){
-			alert("You lose the match")
+			alert("You lose the match finally")
 			flag++
 			fifthDiv.classList.replace("flex","none")
 
