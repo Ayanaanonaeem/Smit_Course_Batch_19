@@ -103,7 +103,7 @@ function handleKeyPress(e) {
         if (scoreAndwicketRandomNum == 0) {
             myobj.out = myobj.out + 1;
             wicket.innerText = myobj.out;
-            alert("you are " + wicketName);
+            alert( wicketName);
             checkingTarget();
 
             if (myobj.out == 11 && flag==0) {
@@ -123,7 +123,7 @@ function handleKeyPress(e) {
             myobj.score = Number(score.innerHTML) + scoreName;
             score.innerText = myobj.score;
 
-            alert("you have made " + scoreName + " run");
+            alert( scoreName + " run");
             checkingTarget();
         }
     }
@@ -158,7 +158,7 @@ function handleKeyPressGame(e) {
             myobj.out = myobj.out + 1;
             wicket.innerText = myobj.out;
 
-            alert("you are " + wicketName);
+            alert( wicketName);
             checkingTarget();
 
             if (myobj.out == 11 && flag==0) {
@@ -178,7 +178,7 @@ function handleKeyPressGame(e) {
             myobj.score = Number(score.innerHTML) + scoreName;
             score.innerText = myobj.score;
 
-            alert("you have made " + scoreName + " run");
+            alert(scoreName + " run");
             checkingTarget();
         }
     }
