@@ -93,42 +93,41 @@ for (let i = 0; i < thirdDivPara.length; i++) {
 		}
 	});
 }
-var flag=0
+var flag = 0;
 function handleKeyPress(e) {
-    if (e.key == " ") {
-        scoreAndwicketRandomNum = Math.floor(Math.random() * 2);
-        wicketRandomNum = Math.floor(Math.random() * 4);
-        wicketName = batting.wicket[wicketRandomNum];
+	if (e.key == " ") {
+		scoreAndwicketRandomNum = Math.floor(Math.random() * 2);
+		wicketRandomNum = Math.floor(Math.random() * 4);
+		wicketName = batting.wicket[wicketRandomNum];
 
-        if (scoreAndwicketRandomNum == 0) {
-            myobj.out = myobj.out + 1;
-            wicket.innerText = myobj.out;
-            alert( wicketName);
-            checkingTarget();
+		if (scoreAndwicketRandomNum == 0) {
+			myobj.out = myobj.out + 1;
+			wicket.innerText = myobj.out;
+			alert(wicketName);
+			checkingTarget();
 
-            if (myobj.out == 11 && flag==0) {
-                alert("So you are all out click okay for next innings");
-                alert("Now you are bowling");
+			if (myobj.out == 11 && flag == 0) {
+				alert("So you are all out click okay for next innings");
+				alert("Now you are bowling");
+				para3.innerText = "Bowling";
 
-                wicket.innerText = 0;
-                myobj.out = 0;
-                myobj.target = Number(score.innerText) + 1;
-                para4.innerText = "Target: " + myobj.target;
-                score.innerText = 0;
-                myobj.score = 0;
-            }
-        } else {
-            scoreRandomNum = Math.floor(Math.random() * 7);
-            scoreName = batting.score[scoreRandomNum];
-            myobj.score = Number(score.innerHTML) + scoreName;
-            score.innerText = myobj.score;
+				wicket.innerText = 0;
+				myobj.out = 0;
+				myobj.target = Number(score.innerText) + 1;
+				para4.innerText = "Target: " + myobj.target;
+				score.innerText = 0;
+				myobj.score = 0;
+			}
+		} else {
+			scoreRandomNum = Math.floor(Math.random() * 7);
+			scoreName = batting.score[scoreRandomNum];
+			myobj.score = Number(score.innerHTML) + scoreName;
+			score.innerText = myobj.score;
 
-            alert( scoreName + " run");
-            checkingTarget();
-        }
-    }
-
-
+			alert(scoreName + " run");
+			checkingTarget();
+		}
+	}
 }
 
 function Batting() {
@@ -142,73 +141,76 @@ function Batting() {
 	para1.innerText = "Player name:" + playerName;
 	para2.innerText = "Selected Team:" + selectedTeam;
 
-	document.addEventListener("keypress", handleKeyPress)
-	
-
-
+	document.addEventListener("keypress", handleKeyPress);
 }
 
 function handleKeyPressGame(e) {
-    if (e.key == " ") {
-        scoreAndwicketRandomNum = Math.floor(Math.random() * 2);
-        wicketRandomNum = Math.floor(Math.random() * 4);
-        wicketName = batting.wicket[wicketRandomNum];
+	if (e.key == " ") {
+		scoreAndwicketRandomNum = Math.floor(Math.random() * 2);
+		wicketRandomNum = Math.floor(Math.random() * 4);
+		wicketName = batting.wicket[wicketRandomNum];
 
-        if (scoreAndwicketRandomNum == 0) {
-            myobj.out = myobj.out + 1;
-            wicket.innerText = myobj.out;
+		if (scoreAndwicketRandomNum == 0) {
+			myobj.out = myobj.out + 1;
+			wicket.innerText = myobj.out;
 
-            alert( wicketName);
-            checkingTarget();
+			alert(wicketName);
+			checkingTarget();
 
-            if (myobj.out == 11 && flag==0) {
-                alert("So you are all out click okay for next innings");
-                alert("Now you are batting");
+			if (myobj.out == 11 && flag == 0) {
+				alert("So you are all out click okay for next innings");
+				alert("Now you are batting");
+				para3.innerText = "Batting";
 
-                wicket.innerText = 0;
-                myobj.out = 0;
-                myobj.target = Number(score.innerText) + 1;
-                para4.innerText = "Target: " + myobj.target;
-                score.innerText = 0;
-                myobj.score = 0;
-            }
-        } else {
-            scoreRandomNum = Math.floor(Math.random() * 7);
-            scoreName = batting.score[scoreRandomNum];
-            myobj.score = Number(score.innerHTML) + scoreName;
-            score.innerText = myobj.score;
+				wicket.innerText = 0;
+				myobj.out = 0;
+				myobj.target = Number(score.innerText) + 1;
+				para4.innerText = "Target: " + myobj.target;
+				score.innerText = 0;
+				myobj.score = 0;
+			}
+		} else {
+			scoreRandomNum = Math.floor(Math.random() * 7);
+			scoreName = batting.score[scoreRandomNum];
+			myobj.score = Number(score.innerHTML) + scoreName;
+			score.innerText = myobj.score;
 
-            alert(scoreName + " run");
-            checkingTarget();
-        }
-    }
+			alert(scoreName + " run");
+			checkingTarget();
+		}
+	}
 }
 function Bowling() {
 	userselection = bowl.innerText;
 	alert("You are bowling");
 	fourthDiv.classList.replace("flex", "none");
 	fifthDiv.classList.replace("none", "flex");
-	para3.innerText = userselection + "ing";
+
 	para1.innerText = "Player name:" + playerName;
 	para2.innerText = "Selected Team:" + selectedTeam;
+	para3.innerText = userselection + "ing";
 
-	document.addEventListener("keypress", handleKeyPressGame)
-	
-
+	document.addEventListener("keypress", handleKeyPressGame);
 }
 
 function checkingTarget() {
-	if(myobj.target!=0){
-		if (myobj.score>=myobj.target) {
-			alert("You won the match finally")
-			fifthDiv.classList.replace("flex","none")
-		}
-	    else if(myobj.out==11){
-			alert("You lose the match finally")
-			flag++
-			fifthDiv.classList.replace("flex","none")
-
-
+	if (myobj.target != 0) {
+		if (userselection == "Bat") {
+			if (myobj.score > myobj.target) {
+				alert("You lose the match");
+				fifthDiv.classList.replace("flex", "none");
+			} else if (myobj.score < myobj.target && myobj.out == 11) {
+				alert("You won the match");
+				flag++;
+				fifthDiv.classList.replace("flex", "none");
+			}
+		} else {
+			if (myobj.score < myobj.target && myobj.out == 11) {
+				alert("you lose the match");
+				fifthDiv.classList.replace("flex", "none");
+			} else if (myobj.score > myobj.target) {
+				alert("you won the match");
+			}
 		}
 	}
 }
