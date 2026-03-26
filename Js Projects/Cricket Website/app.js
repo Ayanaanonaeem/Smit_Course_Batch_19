@@ -210,6 +210,8 @@ function checkingTarget() {
 				fifthDiv.classList.replace("flex", "none");
 			} else if (myobj.score > myobj.target) {
 				alert("you won the match");
+				fifthDiv.classList.replace("flex", "none");
+
 			}
 		}
 	}
