@@ -29,6 +29,17 @@ console.log(obj4.age);
 obj4.age="30"
 console.log(obj4);
 
+// we can also create a fnction in our object 
+
+var myobj={
+    name:"Ayan",
+    moew:function() {
+        return this.name
+        
+    }
+}
+console.log(myobj.moew());
+
 
 
 
