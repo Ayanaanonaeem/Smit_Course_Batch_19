@@ -67,3 +67,6 @@ let array2=[1,5,8,4,9,6,7,8,3,2,11]
 
 let newArray5=array2.sort((a,b)=>b-a)
 console.log(newArray5);
+
+
+let array3=[1,2,3,4,,5,66,6,]
