@@ -71,3 +71,22 @@ console.log(`my name is ${fName} ${lName} and i'm ${age} years Old`);
 
 
 
+// ******************************  Default parameter ****************************************
+
+// agr hum arguments dena bhul jayen to hum default parameter desakte hain jiski value kuch bhi rakhsakte hain agr niche hamne argument diya ho aur default paramter bhi diya ho to ye niche wala hi lega
+
+function sum(a,b=0,c=12) {
+    console.log(a+b+c);
+    
+}
+sum(2,3)
+
+// yhn hamne default bhi diya hai ar arguments bhi diye hain to ye default nhi lega niche jo diya hai woh lega 
+function sum(a,b=0,c=12) {
+    console.log(a+b+c);
+    
+}
+sum(2,0,3) //output 5
+
+
+// ******************************  ...rest/spread operator ****************************************
