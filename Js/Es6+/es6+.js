@@ -89,4 +89,51 @@ function sum(a,b=0,c=12) {
 sum(2,0,3) //output 5
 
 
-// ******************************  ...rest/spread operator ****************************************
+// ******************************  ...spread operator ****************************************
+
+// spread operator array or object ki value ko copy krne main help krta hai without any involvement of 
+// reference 
+
+console.log("spread operator");
+
+
+var array=[1,2,3,4,5,6,7,8]
+
+var array2=[...array]
+
+array2[0]=2
+console.log(array2);
+console.log(array);
+
+
+var array4=array
+array4[0]=2
+console.log(array,"==> array 4");
+
+// spread operator example with object 
+
+const obj={
+    name:"Ayan",
+    rollNo:"2022f-bit-060"
+}
+
+const obj2={...obj}
+obj.name="Iqbal"
+
+console.log(obj2 );
+
+
+// ******************************  ...rest operator ****************************************
+
+// rest operator ap parameter main three dot deta hain agr argument main koi value bach jati hai to woh usmain store hojati hai
+
+
+function greet(a,b,...c) {
+    console.log(a,b,c);
+    
+}
+
+greet(1,2,3,4,5,6,7,8,9)
+
+
+
