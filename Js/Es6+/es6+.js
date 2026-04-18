@@ -136,4 +136,35 @@ function greet(a,b,...c) {
 greet(1,2,3,4,5,6,7,8,9)
 
 
+// ******************************  Destructuring  ****************************************
+ 
+const newArray=[1,2,3,4,5,6,7,8,9,10]
+
+var [one,two,pakora, ,five]=newArray
+
+console.log(pakora,"==> one");
+
+
+const myObj={
+    name:"moiz",
+    father:"abid",
+    role:"IT"
+
+}
+
+var {name:myName,father,role}=myObj
+
+father="naeem"//idhar bs variable ka name naeem hoga uper se change nhi hoga
+
+console.log(myObj);
+
+
+// ******************************  Promises  ****************************************
+
+var mynewArray=[1,2,3,4,5,6,7,]
+console.log(mynewArray)
+
+
+
+
 
