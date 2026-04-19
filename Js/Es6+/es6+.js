@@ -161,10 +161,43 @@ console.log(myObj);
 
 // ******************************  Promises  ****************************************
 
-var mynewArray=[1,2,3,4,5,6,7,]
-console.log(mynewArray)
+var p=new Promise((res,rej)=>{
+    if(false){
+       return res()
+    }else{
+       return rej()
+    }
+})
+
+p
+.then(function(){
+    console.log("resolve hogya hai");
+    
+})
+.catch(function(){
+    console.log("reject hogya hai");
+    
+})
 
 
 
 
+var ans=new Promise((res,rej)=>{
+   var myNum=Math.floor(Math.random()*10)
+   if(myNum>5){
+    res()
+   }else{
+    rej()
+   }
+
+})
+
+ans.then(function() {
+    console.log("greater than 5");
+    
+})
+.catch(function () {
+    console.log("less than 5");
+    
+})
 
