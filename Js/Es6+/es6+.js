@@ -201,3 +201,26 @@ ans.then(function() {
     
 })
 
+var p1=new Promise((res,rej)=>{
+    return res("ghr pr aao")
+})
+
+var p2=p1.then(function(data){
+    console.log(data);
+    return new Promise((res,rej)=>{
+          return res("gate kholo aur gate lgao")
+    })
+    
+})
+
+var p3=p2.then(function(data){
+   console.log(data);
+   return new Promise((res,rej)=>{
+       return res("laptop kholo")
+   })
+})
+
+p3.then(function(data){
+console.log(data);
+
+})
