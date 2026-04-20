@@ -224,3 +224,25 @@ p3.then(function(data){
 console.log(data);
 
 })
+
+
+// ******************************  Try catch  ****************************************
+
+// agr ap chahte  ho ek error ki wjh apka agey wala code khrab na ho woh lazmi chale to ap try catch use krte ho 
+
+// Example
+
+
+console.log("hey");
+
+try {
+    console.log(hey);
+    
+} catch (err) {
+    console.log(err);
+    
+}
+
+console.log("hey");
+
+
