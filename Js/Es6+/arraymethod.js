@@ -70,3 +70,25 @@ console.log(newArray5);
 
 
 let array3=[1,2,3,4,,5,66,6,]
+
+
+
+// **************************** For each ***********************************
+
+// ye bhi map ki trah kam krta hai but new array return nhi krta iska kam hota hai dom update krna 
+// console print krna 
+
+var myNayaArray=array.forEach((ele)=>{
+   console.log(ele+1,"====> for Each");
+   return ele+1
+   
+})
+
+
+console.log(myNayaArray);
+
+array.forEach((ele)=>{
+   console.log(ele+1,"====> for Each");
+  
+   
+})
