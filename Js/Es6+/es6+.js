@@ -243,6 +243,18 @@ try {
     
 }
 
-console.log("hey");
+console.log("hey"); 
+
+
+
+// ******************************  Ternary Operator ****************************************
+
+var userAge=14
+var ageCheck=userAge>18?"Age is greater than 18":"Age is less than 18"
+
+console.log(ageCheck,"===> Ternary Operator");
+
+
+
 
 
