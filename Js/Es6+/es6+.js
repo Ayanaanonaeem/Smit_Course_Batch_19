@@ -252,8 +252,9 @@ console.log("hey");
 var userAge=14
 var ageCheck=userAge>18?"Age is greater than 18":"Age is less than 18"
 
-var hine="salary"
-var haie="gauda"
+var ByePaper="yes"
+var EnjoymentTime="No"
+var EnjoymentAfterGettingSuccess="Yes"
 
 
 console.log(ageCheck,"===> Ternary Operator");
