@@ -260,6 +260,26 @@ var EnjoymentAfterGettingSuccess="Yes"
 console.log(ageCheck,"===> Ternary Operator");
 
 
+// ******************************  Optional Chaining ****************************************
 
+// const obj11=null
+// console.log(obj11.age,">>>>>> result");//======> yhn error ayega
+
+const obj12=null
+console.log(obj12?.age,">>>>>> result");//======> yhn undefined ayega
+
+const obj10={
+    name:"Ayan",
+    hello:{
+        city:"karachi"
+    }
+}
+
+console.log(obj10.address,"=============> result of 278");
+
+const user={}
+
+console.log(user.age.city);//error ayega
+console.log(user?.age?.city);//undefined ayega
 
 
