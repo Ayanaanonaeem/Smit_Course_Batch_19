@@ -16,11 +16,27 @@ fn()//1
 fn()//2
 
 
-// *******************  Temporary dead zone ******************************
-// jab varaible decarle hojata hai lkn use nhi krsakte before initialization
 
-console.log(a);
+// *******************  hoisting and TdZ******************************
+//  var ke keyword se bnaya gya variable aur function ke keyword se bnaya gya function hoist hojata hai
+// yani ke jb pehle access krsakta hai variable bnane  aur fnction banane se pehle
 
+// example
 
-var a=3
+console.log(b);//ye hoist hota hai aur undefined assign hojata hai 
+var b=10
 
+hello()
+function hello() {
+    console.log("hello world");
+    
+}
+
+// let and const bhi hoist hote hain yani ke moemory main store hain lkn woh tdz main chalte jate hain jiski wjh se hum usse initialization se pehle access nhi krsakte  
+
+console.log(c);//error ayega
+let c=90
+
+console.log(d);// error ayega
+
+const d=5
