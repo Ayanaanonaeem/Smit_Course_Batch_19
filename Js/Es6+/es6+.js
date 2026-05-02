@@ -57,6 +57,14 @@ arrowFunc3(23,4)
 var arrowFunc4=()=>12
 console.log(arrowFunc4());
 
+var arrowFunc5=((hello)=>{
+   
+   console.log("this is "+hello);
+   
+})
+arrowFunc5("meow")
+
+
 
 // ****************************** Template literals ****************************************
 
@@ -120,12 +128,12 @@ const obj={
 const obj2={...obj}
 obj.name="Iqbal"
 
-console.log(obj2 );
+console.log(obj2);
 
 
 // ******************************  ...rest operator ****************************************
 
-// rest operator ap parameter main three dot deta hain agr argument main koi value bach jati hai to woh usmain store hojati hai
+// rest operator ap parameter main three dot deta hain agr argument main koi value bach jati hai to woh usmain store hojati hai array format main
 
 
 function greet(a,b,...c) {
@@ -233,7 +241,7 @@ console.log(data);
 // Example
 
 
-console.log("hey");
+
 
 try {
     console.log(hey);
@@ -243,7 +251,7 @@ try {
     
 }
 
-console.log("hey"); 
+
 
 
 
@@ -252,9 +260,6 @@ console.log("hey");
 var userAge=14
 var ageCheck=userAge>18?"Age is greater than 18":"Age is less than 18"
 
-var ByePaper="yes"
-var EnjoymentTime="No"
-var EnjoymentAfterGettingSuccess="Yes"
 
 
 console.log(ageCheck,"===> Ternary Operator");
