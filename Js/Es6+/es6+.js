@@ -287,4 +287,5 @@ const user={}
 console.log(user.age.city);//error ayega
 console.log(user?.age?.city);//undefined ayega
 
+console.log("Ayan");
 
