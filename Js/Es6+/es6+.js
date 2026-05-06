@@ -289,3 +289,22 @@ console.log(user?.age?.city);//undefined ayega
 
 console.log("Ayan");
 
+// ****************************** Fetch Api ****************************************
+
+const url="url"
+
+async function fetchData() {
+    const response=await fetch(url)
+    console.log(response);
+    
+}
+
+fetchData()
+
+
+
+
+
+
+
+
