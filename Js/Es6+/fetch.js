@@ -19,4 +19,32 @@ myfunct()
 
 
 /////////////////////  fetch using then ///////////////////////////////////////////////////////////
+var mydata;
+var p=fetch("https://jsonplaceholder.typicode.com/posts")
+console.log(p);
 
+p.then((response)=>response.json())
+.then((data)=>{
+   mydata=data
+   return mydata
+   hello(mydata)
+})
+// console.log(data);
+
+function hello(mydata) {
+    console.log(mydata);
+    
+}
+
+async function fetchFunc(){
+    var raw=await fetch("https://jsonplaceholder.typicode.com/posts")
+    var data=await raw.json()
+    newOne(data)
+}
+
+function newOne(data) {
+    console.log(data,"=====> line 46");
+    
+}
+
+fetchFunc()
