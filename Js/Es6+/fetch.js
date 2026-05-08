@@ -48,3 +48,8 @@ function newOne(data) {
 }
 
 fetchFunc()
+
+function bye(){
+    console.log("Hell and good bye");
+    
+}
