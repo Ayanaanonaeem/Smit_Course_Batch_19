@@ -57,3 +57,9 @@ function bye(){
 function sum(){
     console.log("Ayan")
 }
+function sum(){
+    console.log("Ayan")
+}
+function sum(){
+    console.log("Ayan")
+}
