@@ -53,3 +53,7 @@ function bye(){
     console.log("Hell and good bye");
     
 }
+
+function sum(){
+    console.log("Ayan")
+}
