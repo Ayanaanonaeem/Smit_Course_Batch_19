@@ -303,6 +303,9 @@ fetchData()
 
 
 
+console.log("hello this is my code");
+console.log("Hello my name is Ayan")
+console.log ("hi this is my laptop which get hang some time")
 
 
 
