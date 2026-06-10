@@ -27,7 +27,7 @@ console.log(array1);
 var anasfound = false;
 for (let i = 0; i < array1.length; i++) {
 	if (array1[i] == "anas") {
-		anasfound = true;
+		anasfound = true; 
 		console.log("Anas found");
 		break;
 	}
@@ -59,7 +59,7 @@ if (cityfound==false) {
 }
 
 
-for loop nested
+// for loop nested
 
 
 let n=5;

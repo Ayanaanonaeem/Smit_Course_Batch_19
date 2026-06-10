@@ -30,7 +30,7 @@ var num3=++num2 + num2++ + ++num2 + ++num2 + num2++
           15    +  15     +  17   +   18    + 18
           
 
-console.log(num3);
+console.log(num3,"========>19");
 
 
 // B O D M A S 
