@@ -1,5 +1,5 @@
 // *******************  closure ******************************
-//  inner fnction apne outer fnction ke variable ko yd rakhta hai  even after parent fnction ke khtm hone ke bd bhi
+//  inner function apne outer fnction ke variable ko yd rakhta hai  even after parent fnction ke khtm hone ke bd bhi
 
 function outer() {
     var count=0
@@ -40,3 +40,8 @@ let c=90
 console.log(d);// error ayega
 
 const d=5
+
+console.log("hello hi how are you doing today");
+console.log("Meow");
+
+

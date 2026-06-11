@@ -53,9 +53,11 @@ for (let i = 0; i < str.length; i++) {
 var text="It is startling to think that, even in the darkest depths of World War 2, J. R. R. Tolkien was writing the trilogy, which contains, with the weird applicability available only to poetry and myth, the essential notion that the good gray wizard can understand the evil magi precisely because he is just enough like them to grasp their minds and motives in ways that they cannot grasp his"
 
  var firstChar = text.indexOf("World War 2");
+ console.log(firstChar);
+ 
  if (firstChar !== -1) {
    text = text.slice(0, firstChar) + "the Second World War" + text.slice(firstChar + 12);
-   console.log(text);
+   console.log(text,"==> hello");
   
 }
 // for (let i=0; i < para.length; i++){
