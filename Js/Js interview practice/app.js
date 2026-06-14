@@ -15,3 +15,9 @@ function alo() {
 }
 alo()
 
+function greetUser(){
+   console.log("hello Ayan");
+   
+}
+greetUser()
+
