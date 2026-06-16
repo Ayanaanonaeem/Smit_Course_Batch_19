@@ -131,7 +131,7 @@ obj.name="Iqbal"
 console.log(obj2);
 
 
-// ******************************  ...rest operator ****************************************
+// ******************************  ...rest parameter ****************************************
 
 // rest operator ap parameter main three dot deta hain agr argument main koi value bach jati hai to woh usmain store hojati hai array format main
 

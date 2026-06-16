@@ -1,0 +1,38 @@
+// Ye map new ARRAY RETURN KRTA HAI
+
+let a = [1, 2, 3, 4, 5, 6, 7, 8];
+
+var result = a.map((ele) => {
+  return ele + 1;
+});
+console.log(result);
+console.log(a);
+
+// YE FILTER OUT KRKE NEW ARRAY RETURN KRTA HAI
+
+var filterRes = a.filter((ele) => {
+  return ele > 4;
+});
+
+console.log(filterRes);
+
+// YE EK VALUE DATA HAI AUR DATA KO REDUCE KRDETA HAI
+var reduceRes = a.reduce((prev, curr) => {
+  return prev + curr;
+});
+console.log(reduceRes);
+
+// YE ARRAY RETURN NHI KRTA ALAG ALAG LINE MAIN VALUE RETURN KRTA HAI
+
+var forEachRes = a.forEach((ele) => {
+  console.log(ele);
+});
+
+console.log(forEachRes);
+
+
+//  YE SINGLE VALUE RETURN KRTA HAI 
+var findRes = a.find((ele) => {
+  return ele == 8;
+});
+console.log(findRes);
