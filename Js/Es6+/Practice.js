@@ -1,6 +1,6 @@
 // Ye map new ARRAY RETURN KRTA HAI
 
-const { useImperativeHandle } = require("react");
+
 
 let a = [1, 2, 3, 4, 5, 6, 7, 8];
 
@@ -62,3 +62,28 @@ p.then(()=>{
 
 // jhn data tumhe lage ke wait krke ayega to tum whn async await ka use kroge 
 
+async function fetchData() {
+  var raw=await fetch("https://jsonplaceholder.typicode.com/posts")
+  var data=await raw.json()
+  myData(data)
+  
+}
+
+function myData(data) {
+  console.log(data);
+  
+}
+fetchData()
+
+var myfunc=()=>{
+  fetch("https://jsonplaceholder.typicode.com/posts")
+  .then(res=>res.json())
+  .then(data=>hello(data))
+ 
+}
+function hello(data) {
+  console.log(data);
+  
+}
+
+myfunc()
