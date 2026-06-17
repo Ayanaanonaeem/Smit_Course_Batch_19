@@ -72,3 +72,7 @@ console.log(myNayaArray);
 array.forEach((ele) => {
   console.log(ele + 1, "====> for Each");
 });
+
+console.log(run);
+
+let run=6

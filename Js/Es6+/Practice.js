@@ -1,5 +1,7 @@
 // Ye map new ARRAY RETURN KRTA HAI
 
+const { useImperativeHandle } = require("react");
+
 let a = [1, 2, 3, 4, 5, 6, 7, 8];
 
 var result = a.map((ele) => {
@@ -36,3 +38,27 @@ var findRes = a.find((ele) => {
   return ele == 8;
 });
 console.log(findRes);
+
+
+// promise practice
+
+let p=new Promise((res,rej)=>{
+    if(false){
+      return res()
+    }
+    else{
+       return rej()
+    }
+})
+
+p.then(()=>{
+  console.log("resolve hogya g");
+  
+})
+.catch (()=>{
+  console.log("reject hogya g");
+
+})       
+
+// jhn data tumhe lage ke wait krke ayega to tum whn async await ka use kroge 
+
