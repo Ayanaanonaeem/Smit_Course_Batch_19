@@ -63,3 +63,7 @@ function sum(){
 function sum(){
     console.log("Ayan")
 }
+function add (a,b){
+    return a+b
+}
+add(2,3)
