@@ -87,3 +87,8 @@ function hello(data) {
 }
 
 myfunc()
+
+function Multiply(a,b) {
+  console.log(a*b);
+  
+}
