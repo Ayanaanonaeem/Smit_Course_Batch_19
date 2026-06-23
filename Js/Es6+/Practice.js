@@ -96,3 +96,7 @@ function Sum(a,b) {
   console.log(a*b);
   
 }
+function divide(a,b) {
+  console.log(a/b);
+  
+}
