@@ -58,13 +58,13 @@ console.log(result);
 // local and global varaible 
 var thesum=4
 function hello(){
-     return thesum=6
+    thesum=6
      
     
     
 }
 hello()
-// console.log(thesum);
+console.log(thesum);
 
 
 // Agr hum global variable bnayen uper aur phr hum nivhe function main usse change aur uske bd us varaible 

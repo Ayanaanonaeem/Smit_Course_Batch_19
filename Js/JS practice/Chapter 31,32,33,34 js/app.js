@@ -26,9 +26,12 @@ console.log(today);
 // We can manually give the date
 var newdate=new Date("Sep 13,2005")
 
+
 // agr hamen millsiseconds chaiye is date tk ke
 
 var NewDateMilli=newdate.getTime()
+console.log(NewDateMilli);
+
 
 // Ab hum hamari current date ke millisecond nikalenge ye hamen 1 january 1970 se lekr ab tk ke millisecond btayega
 

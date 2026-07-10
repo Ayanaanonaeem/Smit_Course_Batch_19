@@ -1,5 +1,5 @@
 var array=["apple","mango","banana","orange","peach"]
-var fruitToCheck="guaua"
+var fruitToCheck="GUAUA"
 fruitToCheck=fruitToCheck.toLowerCase()
 for (let i = 0; i < array.length; i++) {
     if (fruitToCheck==array[i]) {
@@ -13,7 +13,7 @@ for (let i = 0; i < array.length; i++) {
 console.log("Your fruit is not here");
 
 // We can use touppercase also 
-
+// FOR MAKING WORD FIRST LETTER CAPITAL
 var userinput=prompt("Enter a word")
 var firstChar=userinput.slice(0,1).toUpperCase()
 var otherChar=userinput.slice(1).toLowerCase()
@@ -75,6 +75,8 @@ console.log(string.indexOf("california"));
 // if the finding word is not present in the string then it give -1 shown in below example
 
 console.log(string.indexOf("p"));
+
+
 
 // ismain btayega yeah agey se hi gin ke konse index pr hai pr lkn dekhega piche se
 

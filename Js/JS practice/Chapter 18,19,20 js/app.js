@@ -62,16 +62,16 @@ if (cityfound==false) {
 // for loop nested
 
 
-let n=5;
-for (let i = 0; i <=n; i++) {
-  var row=""
-  for (let j = 0; j < i; j++) {
-   row +="*"
+// let n=5;
+// for (let i = 0; i <=n; i++) {
+//   var row=""
+//   for (let j = 0; j < i; j++) {
+//    row +="*"
     
-  }
-  console.log(row);
+//   }
+//   console.log(row);
   
-}
+// }
 
 // for making pyramid
 let n=5;

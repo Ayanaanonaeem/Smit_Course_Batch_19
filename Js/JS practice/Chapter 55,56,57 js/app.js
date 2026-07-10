@@ -1,10 +1,13 @@
 var para=document.getElementById("para")
 var head=document.getElementById("head")
 // var head2= document.getComputedStyle("head")
+
+
 function big() {
-    para.className+=" big"
-    para.style.fontSize="60px"
-    head.style.visibility="hidden"
+     para.style.fontSize = "30px";
+    para.style.color = "red";
+   console.log(para.className);
+   
 }
 var head=document.getElementById("head").margin
 
