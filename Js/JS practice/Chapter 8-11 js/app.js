@@ -31,6 +31,7 @@ console.log(userAge);
 var hello="2"
 var newhello=hello
 
+
 // Or we can use method like NUmber or parseint or parse
 
 newhello=Number(hello)

@@ -46,30 +46,44 @@
     
 // }
 
-// Nested if else
+// // Nested if else
 
-var userFood=prompt("Enter your dish","biryani,pizza")
+// var userFood=prompt("Enter your dish","biryani,pizza")
 
-if(userFood=="pizza"){
-   var flavour=prompt("enter your flavour","paproni, fajita, malaiboti")
-   if (flavour=="paproni") {
-     alert("You select paproni")
-   }
-   else if(flavour="fajita"){
-     alert("Your flavour is fajita")
-   }
-   else{
-    alert("Your flavour is malaiboti")
-   }
-}else{
-    var biryanitype=prompt("Enter which biryani do you love", "beef,chicken,mutton")
-    if(biryanitype=="beef"){
-        alert("your beef biryani order is done")       
-    }
-    else if(biryanitype=="chicken"){
-        alert("your chicken biryani order is done") 
-    }
-    else{
-        alert("your mutton biryani order is done")
-    }
+// if(userFood=="pizza"){
+//    var flavour=prompt("enter your flavour","paproni, fajita, malaiboti")
+//    if (flavour=="paproni") {
+//      alert("You select paproni")
+//    }
+//    else if(flavour=="fajita"){
+//      alert("Your flavour is fajita")
+//    }
+//    else{
+//     alert("Your flavour is malaiboti")
+//    }
+// }else{
+//     var biryanitype=prompt("Enter which biryani do you love", "beef,chicken,mutton")
+//     if(biryanitype=="beef"){
+//         alert("your beef biryani order is done")       
+//     }
+//     else if(biryanitype=="chicken"){
+//         alert("your chicken biryani order is done") 
+//     }
+//     else{
+//         alert("your mutton biryani order is done")
+//     }
+// } 
+
+var new_Var=24
+var name="Ayan"
+var hello="meow"
+
+if (true || (true && false)) {
+    console.log("hello");
+    
+} else {
+    console.log("bye");
+    
 }
+
+// hum braket laga denge take ham js ko btasken ke konsa pehle solve krna hai 

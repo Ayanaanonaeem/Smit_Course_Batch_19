@@ -45,17 +45,23 @@ console.log(array3);
 // splice is used for inserting deleting and removing alue from the array 
 
 var array4=["ayan","jawaid","iqbal","farhan"]
-array4.splice(2,0,"naeem")
+array4.splice()
+console.log(array4.splice(0,1,"faraz"));
 console.log(array4);
+
+
 
 // while slice is just used for copying the array
 
 var array5=["ayan","jawaid","iqbal","farhan"]
-array5.slice(1,2)
+var my_Array=array5.slice(1,2)
 
 console.log(array5.slice(1,2));
+console.log(my_Array);
 
 
+// to unshift hamen woh deta hai jo array se remove huwa ho agr hum usse log kren to 
+// aur slice ko log krne main hamen woh milega jo array se slice kiya ho
 
 
 
