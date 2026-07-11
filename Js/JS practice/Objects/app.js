@@ -13,7 +13,10 @@ var obj2={
 }
 
 var obj3=obj
-obj3.salary="40"
+obj3.age="40"
+
+console.log(obj,"===> meow");
+
 
 
 var obj4={
