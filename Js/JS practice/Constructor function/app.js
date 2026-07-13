@@ -21,6 +21,16 @@ var student4=new Student("Saif","urRehaman")
 console.log(student3);
 console.log(student4);
 
+
+function Student7(name,lastName) {
+    this.name=name
+    this.lastName=lastName
+}
+
+var student6=new Student7("Ayan","Naeem")
+console.log(student6);
+
+
 // Hum constuctor function main function bhi bnasakte hain 
 
 
@@ -38,7 +48,9 @@ function Student1(name) {
 }
 
 var Object=new Student1("Ayan")
+var Object3=new Student1("Ayan")
 console.log(Object);
+console.log(Object3);
 
 // yhn hr object ke liye greet function banega best practice hai hum ise prototype main dalden
 
