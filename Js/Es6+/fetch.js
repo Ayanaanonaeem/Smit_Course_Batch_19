@@ -49,21 +49,11 @@ function newOne(data) {
 
 fetchFunc()
 
-function bye(){
-    console.log("Hell and good bye");
+
+
+async function Fetchfunc5() {
+    var raw=await fetch(url)
+    var data=await raw.json()
+   
     
 }
-
-function sum(){
-    console.log("Ayan")
-}
-function sum(){
-    console.log("Ayan")
-}
-function sum(){
-    console.log("Ayan")
-}
-function add (a,b){
-    return a+b
-}
-add(2,3)

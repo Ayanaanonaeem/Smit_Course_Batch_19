@@ -79,21 +79,3 @@ function Myfunction(data) {
 data()
 
 
-function abc (){
-     console.log("hello")
-}
-function abc (){
-     console.log("hello")
-}
-function abc (){
-     console.log("hello")
-}
-function abc (){
-     console.log("hello")
-}
-function abc (){
-     console.log("hello")
-}
-function abc (){
-     console.log("hello")
-}

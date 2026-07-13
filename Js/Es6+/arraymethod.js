@@ -5,6 +5,8 @@
 
 // Ye hamen new array return krta hai
 
+
+
 let array = [1, 2, 3, 4, 5, 6, 7, 8];
 
 let newArray = array.map((ele) => {
@@ -29,7 +31,8 @@ console.log(newArray2);
 
 // Reduce hamse do parameter leta hai ek hota hai prev value and ek hota curr value array main prev aur
 // current value ke sath jo bhi operation krwana chahen krwasakte hain aur ye ek value dega end main
-// hum ismain khud se values bhi desakte hain jhn se hamen start krna hai
+// hum ismain khud se values bhi desakte hain jhn se hamen start krna hai mtlb prev value 4 hogi sbse 
+// pehle uske bd 1 plus krega woh
 
 let newArray3 = array.reduce((prev, curr) => prev + curr, 4);
 
