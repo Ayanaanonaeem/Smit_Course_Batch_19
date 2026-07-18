@@ -7,3 +7,5 @@ var collectionPara=document.getElementsByClassName("p")
 console.log(para);
 console.log(collectionPara);
 
+console.log("Hello")
+
