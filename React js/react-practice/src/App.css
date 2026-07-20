@@ -1,0 +1,77 @@
+*{
+  padding: 0px;
+  margin: 0px;
+  box-sizing: border-box;
+}
+body{
+  background-color:rgb(247, 236, 217);
+}
+.head{
+  text-align: center ;
+  color: rgb(3,16,69);
+}
+#main{
+  /* border: 1px solid red; */
+  height:600px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+ 
+  
+}
+#main #main-1{
+   border: 1px solid rgb(225, 218, 218);
+   width: 600px;
+   height: 500px;
+  box-shadow: 5px 5px 5px grey;
+  padding: 10px;
+   background-color: rgb(248, 248, 249);
+
+}
+.question{
+  margin: 10px;
+  color: rgb(3,16,69);
+}
+.para{
+  padding-top: 40px;
+  color: rgb(3,16,69);
+  font-size: 20px;
+}
+.option-main{
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-top: 20px;
+}
+.option{
+  border: 1px solid black;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  padding: 10px;
+  border-radius: 10px;
+  /* background-color: rgb(182, 245, 182); */
+}
+.option:hover{
+  background-color: rgb(255, 250, 250);
+}
+.buttons{
+  display: flex;
+  /* border: 1px solid black; */
+  margin-top: 10px;
+  height: 40px;
+  gap: 5px;
+  align-items: flex-end;
+  justify-content: flex-end;
+}
+
+.btn-1,.btn-2{
+  height: 30px;
+  width: 90px;
+  font-size: 18px;
+  background: rgb(19, 2, 105);
+  color: rgb(255, 255, 255);
+  border: 2px solid black;
+  border-radius: 5px;
+}
