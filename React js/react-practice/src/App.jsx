@@ -6,23 +6,16 @@ function App() {
 
   const Addvalue = () => {
     if (counter >= 20) {
-       setCounter(0)
-    }
-    else{
-
+      setCounter(0);
+    } else {
       setCounter(counter + 1);
     }
-    
   };
- 
+
   const Removevalue = () => {
     if (counter <= 0) {
-     
-       setCounter(0)
-      
-    }
-    else{
-
+      setCounter(0);
+    } else {
       setCounter(counter - 1);
     }
   };
