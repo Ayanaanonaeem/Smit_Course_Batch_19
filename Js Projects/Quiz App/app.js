@@ -72,27 +72,157 @@ const quizData = [
 ];
 
 const question = document.getElementById("question");
-var option = document.getElementsByClassName("option");
+var option = document.querySelectorAll(".option");
 let main=document.getElementById("main")
+let userSelectedOption;
+let counter=1
 
-quizData.forEach((val,i) => {
-    if (val.id==1) {
-            
-      
-         
+// for changing question
+
+function changeQuestion() {
+    counter+=1
+
+  quizData.forEach((value,i) => {
+    if (value.id == 2 && counter==2) {
+      question.innerText = value.id + ") " + value.question;
+      for (let i = 0; i < option.length; i++) {
+      option[i].innerText=value.options[i] 
+        
+      }
+    
     }
-     console.log("bye");
-});
+   
+  
+})
+    
+
+  
+  quizData.forEach((value) => {
+    if (value.id == 3 && counter==3) {
+      question.innerText = value.id + ") " + value.question;
+      for (let i = 0; i < option.length; i++) {
+      option[i].innerText=value.options[i] 
+
+      }
+    }
+    
+
+  });
+  quizData.forEach((value) => {
+    if (value.id == 4 && counter==4) {
+      question.innerText = value.id + ") " + value.question;
+      for (let i = 0; i < option.length; i++) {
+      option[i].innerText=value.options[i] 
+
+      }
+    }
+    
+
+  });
+  quizData.forEach((value) => {
+    if (value.id == 4 && counter==4) {
+      question.innerText = value.id + ") " + value.question;
+      for (let i = 0; i < option.length; i++) {
+      option[i].innerText=value.options[i] 
+
+      }
+    }
+    
+
+  });
+  quizData.forEach((value) => {
+    if (value.id == 5 && counter==5) {
+      question.innerText = value.id + ") " + value.question;
+      for (let i = 0; i < option.length; i++) {
+      option[i].innerText=value.options[i] 
+
+      }
+    }
+    
+
+  });
+  quizData.forEach((value) => {
+    if (value.id == 6 && counter==6) {
+      question.innerText = value.id + ") " + value.question;
+      for (let i = 0; i < option.length; i++) {
+      option[i].innerText=value.options[i] 
+
+      }
+    }
+    
+
+  });
+  quizData.forEach((value) => {
+    if (value.id == 7 && counter==7) {
+      question.innerText = value.id + ") " + value.question;
+      for (let i = 0; i < option.length; i++) {
+      option[i].innerText=value.options[i] 
+
+      }
+    }
+    
+
+  });
+  quizData.forEach((value) => {
+    if (value.id == 8 && counter==8) {
+      question.innerText = value.id + ") " + value.question;
+      for (let i = 0; i < option.length; i++) {
+      option[i].innerText=value.options[i] 
+
+      }
+    }
+    
+
+  });
+  quizData.forEach((value) => {
+    if (value.id == 9 && counter==9) {
+      question.innerText = value.id + ") " + value.question;
+      for (let i = 0; i < option.length; i++) {
+      option[i].innerText=value.options[i] 
+
+      }
+    }
+    
+
+  });
+  quizData.forEach((value) => {
+    if (value.id == 10 && counter==10) {
+      question.innerText = value.id + ") " + value.question;
+      for (let i = 0; i < option.length; i++) {
+      option[i].innerText=value.options[i] 
+
+      }
+    }
+    
+
+  });
+  
+
+ 
+}
+
+
+
+// for checking correct answer
+
+
+ option.forEach((val)=>{
+  val.option[i].addEventListener("click",()=>{
+  userSelectedOption=val.innerText
+  
+   if (userSelectedOption==quizData[counter].answer) {
+      val.style.backgroundColor="green"
+      
+      
+    } else {
+       val.style.backgroundColor="red"
+      
+    }
+  })
+ })
 
 question.innerText = quizData[0].id + ") " + quizData[0].question;
 
 
 
 
-function changeQuestion() {
-  quizData.forEach((value) => {
-    if (value.id == 2) {
-      question.innerText = value.id + ") " + value.question;
-    }
-  });
-}
