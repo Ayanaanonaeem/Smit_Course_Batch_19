@@ -7,7 +7,7 @@ import './App.css'
 
 function App() {
   const [count, setCount] = useState(0)
-  let obj={
+  let myobj={
    name:"Ayan",
    age:12
   }
@@ -16,8 +16,8 @@ function App() {
   return (
     <>
     <div className='box'>
-    <Card obj={obj} btnClick="learn more"/>
-    <Card obj={obj} btnClick="click me"/>
+    <Card obj="learn more" myobj={myobj}/>
+    <Card  obj="click me"myobj={myobj}/>
     </div>
     </>
   )

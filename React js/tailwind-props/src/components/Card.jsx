@@ -1,6 +1,10 @@
 // import Image from "next/image";
 
-export default function Card({obj}) {
+export default function Card({obj,myobj}) {
+ 
+  
+  
+  
   
     
    
@@ -21,10 +25,10 @@ export default function Card({obj}) {
 
       <div className="mb-4">
         <span className="inline-block px-3 py-1 text-xs font-medium tracking-wider uppercase bg-white text-black rounded-full mb-3">
-          {name}
+        {myobj.name}
         </span>
         <h2 className="text-xl font-bold text-white mb-2 group-hover:text-gray-300 transition-colors duration-200">
-         {name}
+         
         </h2>
       </div>
 
@@ -35,7 +39,7 @@ export default function Card({obj}) {
 
       <div className="flex items-center justify-between">
         <button className="px-4 py-2 bg-white hover:bg-gray-200 text-black text-sm rounded-lg transition-colors duration-200">
-          {obj.name}
+          {obj}
         </button>
         <div className="flex items-center space-x-1 text-xs text-gray-500">
           <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
@@ -46,7 +50,7 @@ export default function Card({obj}) {
               clipRule="evenodd"
             />
           </svg>
-          <span>{obj.age}</span>
+          <span>{myobj.age}</span>
         </div>
       </div>
     </div>
