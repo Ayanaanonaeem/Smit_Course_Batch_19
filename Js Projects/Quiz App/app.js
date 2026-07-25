@@ -72,157 +72,57 @@ const quizData = [
 ];
 
 const question = document.getElementById("question");
-var option = document.querySelectorAll(".option");
-let main=document.getElementById("main")
-let userSelectedOption;
-let counter=1
+const option = document.querySelectorAll(".option");
 
-// for changing question
+let counter = 0;
+
+function showQuestion() {
+     question.innerText=quizData[counter].id+")"+quizData[counter].question
+
+     for (let i = 0; i < option.length; i++) {
+     
+      
+      option[i].innerText=quizData[counter].options[i]
+
+      option[i].style.backgroundColor=""
+
+      
+      
+     }
+
+}
+showQuestion()
+
 
 function changeQuestion() {
-    counter+=1
+  if (counter<quizData.length-1) {
+    counter++
+    showQuestion()
+  }else{
+    alert("quiz finished")
+  }
 
-  quizData.forEach((value,i) => {
-    if (value.id == 2 && counter==2) {
-      question.innerText = value.id + ") " + value.question;
-      for (let i = 0; i < option.length; i++) {
-      option[i].innerText=value.options[i] 
-        
-      }
-    
-    }
-   
-  
-})
-    
-
-  
-  quizData.forEach((value) => {
-    if (value.id == 3 && counter==3) {
-      question.innerText = value.id + ") " + value.question;
-      for (let i = 0; i < option.length; i++) {
-      option[i].innerText=value.options[i] 
-
-      }
-    }
-    
-
-  });
-  quizData.forEach((value) => {
-    if (value.id == 4 && counter==4) {
-      question.innerText = value.id + ") " + value.question;
-      for (let i = 0; i < option.length; i++) {
-      option[i].innerText=value.options[i] 
-
-      }
-    }
-    
-
-  });
-  quizData.forEach((value) => {
-    if (value.id == 4 && counter==4) {
-      question.innerText = value.id + ") " + value.question;
-      for (let i = 0; i < option.length; i++) {
-      option[i].innerText=value.options[i] 
-
-      }
-    }
-    
-
-  });
-  quizData.forEach((value) => {
-    if (value.id == 5 && counter==5) {
-      question.innerText = value.id + ") " + value.question;
-      for (let i = 0; i < option.length; i++) {
-      option[i].innerText=value.options[i] 
-
-      }
-    }
-    
-
-  });
-  quizData.forEach((value) => {
-    if (value.id == 6 && counter==6) {
-      question.innerText = value.id + ") " + value.question;
-      for (let i = 0; i < option.length; i++) {
-      option[i].innerText=value.options[i] 
-
-      }
-    }
-    
-
-  });
-  quizData.forEach((value) => {
-    if (value.id == 7 && counter==7) {
-      question.innerText = value.id + ") " + value.question;
-      for (let i = 0; i < option.length; i++) {
-      option[i].innerText=value.options[i] 
-
-      }
-    }
-    
-
-  });
-  quizData.forEach((value) => {
-    if (value.id == 8 && counter==8) {
-      question.innerText = value.id + ") " + value.question;
-      for (let i = 0; i < option.length; i++) {
-      option[i].innerText=value.options[i] 
-
-      }
-    }
-    
-
-  });
-  quizData.forEach((value) => {
-    if (value.id == 9 && counter==9) {
-      question.innerText = value.id + ") " + value.question;
-      for (let i = 0; i < option.length; i++) {
-      option[i].innerText=value.options[i] 
-
-      }
-    }
-    
-
-  });
-  quizData.forEach((value) => {
-    if (value.id == 10 && counter==10) {
-      question.innerText = value.id + ") " + value.question;
-      for (let i = 0; i < option.length; i++) {
-      option[i].innerText=value.options[i] 
-
-      }
-    }
-    
-
-  });
-  
-
- 
 }
 
+function previousQuestion() {
+  if(counter> 0){
+    counter--;
+    showQuestion()
+  }
+}
 
-
-// for checking correct answer
-
-
- option.forEach((val)=>{
-  val.option[i].addEventListener("click",()=>{
-  userSelectedOption=val.innerText
-  
-   if (userSelectedOption==quizData[counter].answer) {
+option.forEach(val => {
+  val.addEventListener("click",()=>{
+    if(val.innerText==quizData[counter].answer){
+      
       val.style.backgroundColor="green"
       
+    }else{
       
-    } else {
-       val.style.backgroundColor="red"
-      
+      val.style.backgroundColor="red"
     }
+    
+    
   })
- })
-
-question.innerText = quizData[0].id + ") " + quizData[0].question;
-
-
-
-
+  
+});
