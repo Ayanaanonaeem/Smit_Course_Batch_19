@@ -74,6 +74,7 @@ const quizData = [
 const question = document.getElementById("question");
 const option = document.querySelectorAll(".option");
 
+
 let counter = 0;
 
 function showQuestion() {
