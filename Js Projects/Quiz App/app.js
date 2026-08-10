@@ -73,6 +73,9 @@ const quizData = [
 
 const question = document.getElementById("question");
 const option = document.querySelectorAll(".option");
+console.log(option[1]);
+
+let userscore=0;
 
 
 let counter = 0;
@@ -98,9 +101,11 @@ showQuestion()
 function changeQuestion() {
   if (counter<quizData.length-1) {
     counter++
+    changeAttribute()
     showQuestion()
+
   }else{
-    alert("quiz finished")
+    alert(`quiz finished your score is ${userscore}/10`)
   }
 
 }
@@ -115,15 +120,47 @@ function previousQuestion() {
 option.forEach(val => {
   val.addEventListener("click",()=>{
     if(val.innerText==quizData[counter].answer){
-      
+      userscore++
       val.style.backgroundColor="green"
+      changeOptionColor()
       
-    }else{
       
+    }
+    else if(val.innerText!==quizData[counter].answer){
       val.style.backgroundColor="red"
+      changeOptiondisabled()
+      
+       
     }
     
     
   })
+   
+
   
 });
+
+function changeOptionColor() {
+  option.forEach(val=>{
+   if (val.innerText!==quizData[counter].answer) {
+       val.style.backgroundColor="red"
+       //  val.setAttribute(disabled="true")
+       val.setAttribute("disabled","true")
+       
+      } 
+  })
+}
+
+function changeAttribute() {
+  option.forEach(val=>{
+   val.removeAttribute("disabled")
+  })
+}
+
+function changeOptiondisabled(){
+  for (let i = 0; i < option.length; i++) {
+    
+    option[i].setAttribute("disabled","true")
+    
+  }
+}

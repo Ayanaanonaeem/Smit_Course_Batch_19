@@ -80,7 +80,7 @@ h3 {
   margin-top: 35px;
 }
 
-button {
+.btn {
   padding: 12px 28px;
   border: none;
   border-radius: 10px;
@@ -92,12 +92,12 @@ button {
   transition: 0.3s ease;
 }
 
-button:hover {
+.btn:hover {
   background: #1d4ed8;
   transform: translateY(-2px);
 }
 
-button:active {
+.btn:active {
   transform: scale(0.96);
 }
 
