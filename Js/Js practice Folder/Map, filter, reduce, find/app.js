@@ -48,3 +48,9 @@ console.log(newFind);
 
 // for each agr hamen specific element pr kam krwana ho to for each use krenge hum just like apko p tag main direct data show krwana hai to ap for each use krenge kyn ye ye kuch return nahi krta
 
+function myObj(val){
+    console.log(val);
+    
+}
+
+myObj({myname:"Ayan"})
