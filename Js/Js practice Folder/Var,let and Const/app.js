@@ -30,6 +30,11 @@ let gender="female"
   let   gender="male"
       
 }
+let gender="female"
+{
+  let   gender="male"
+      
+}
    
 // console.log(blue());
  

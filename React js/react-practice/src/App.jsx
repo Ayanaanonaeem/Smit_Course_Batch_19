@@ -4,28 +4,32 @@ import "./App.css";
 function App() {
   let [counter, setCounter] = useState(0);
 
-  const Addvalue = () => {
-    if (counter >= 20) {
-      setCounter(0);
-    } else {
-      setCounter(counter + 1);
-    }
-  };
+  // const Addvalue = () => {
+  //   if (counter >= 20) {
+  //     setCounter(0);
+  //   } else {
+  //     setCounter(counter + 1);
+  //   }
+  // };
 
-  const Removevalue = () => {
-    if (counter <= 0) {
-      setCounter(0);
-    } else {
-      setCounter(counter - 1);
-    }
-  };
+  // const Removevalue = () => {
+  //   if (counter <= 0) {
+  //     setCounter(0);
+  //   } else {
+  //     setCounter(counter - 1);
+  //   }
+  // };
+
+  const Addvalue=()=>{
+    setCounter((prev)=>(prev+1))
+  }
 
   return (
     <>
       <div>
         <p>Counter {counter}</p>
         <button onClick={Addvalue}>Add</button>
-        <button onClick={Removevalue}>Remove</button>
+        {/* <button onClick={Removevalue}>Remove</button> */}
       </div>
     </>
   );
