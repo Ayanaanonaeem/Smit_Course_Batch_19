@@ -30,12 +30,8 @@ let gender="female"
   let   gender="male"
       
 }
-let gender="female"
-{
-  let   gender="male"
-  let gender="female"
-      
-}
+   
+
    
 // console.log(blue());
  
@@ -44,6 +40,7 @@ console.log(gender);
 
 
 
+// console.log(java);
 
 
 
@@ -54,4 +51,6 @@ console.log(gender);
 // console.log(age);
 
 const age=12// ye sahi hai
+
+console.table([gender,age])
 
