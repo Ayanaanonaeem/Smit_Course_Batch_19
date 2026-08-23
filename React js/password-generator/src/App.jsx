@@ -1,43 +1,47 @@
-import { useCallback, useEffect, useState, useRef} from "react";
-import "./App.css";
+import React from 'react'
+import { useState,useEffect,useCallback,useRef } from 'react'
+import "./App.css"
 
-function App() {
-  const [length, setLength] = useState(8);
-  const [number, setNumber] = useState(false);
-  const [character, setCharacter] = useState(false);
-  const [password, setPassword] = useState("");
-  const passwordRef=useRef(null)
+const App = () => {
 
+  const [length,setLength]=useState(8)
+  const [character,setCharacter]=useState(false)
+  const [number,setNumber]=useState(false)
+  const [password,setPassword]=useState("")
+
+  const passwordRef=useRef()
 
   const handlecopybutton=useCallback(()=>{
     passwordRef.current?.select()
     window.navigator.clipboard.writeText(password)
-  },[password])
-  const generatePassword = useCallback(() => {
-    let str = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz";
+  })
 
-    let pswd = "";
-
-    if (number) str += "1234567890";
-    if (character) str += "@#$%^&*()_+-=[]{}|;:'\",.<>/?`~\\";
-    
+  const passwordGenerator=useCallback(()=>{
+    let pswd=""
+    let str="ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz"
+    if (number) str+="1234567890"
+    if(character) str+="@#$%^&*()_+-=[]{}|;:'\",.<>/?`~\\"
     for (let i = 0; i < length; i++) {
-      let randomstr = Math.floor(Math.random() * str.length + 1);
-
-      pswd += str.charAt(randomstr);
+      var randomstr=Math.floor(Math.random()*str.length+1)
+      pswd+=str.charAt(randomstr)
+      
+      
     }
+    
+    setPassword(pswd)
 
-    setPassword(pswd);
-  }, [length, character, number, setPassword]);
+
+  },[length,number,character,setPassword])
 
   useEffect(() => {
-    generatePassword();
-  }, [length, character, number, setPassword]);
-
+     
+  passwordGenerator()
+    
+  }, [length,number,character,setPassword])
+  
   return (
     <>
-    
-      <div
+    <div
         className=" bg-gray-900 mx-auto my-9 h-35 rounded-2xl flex flex-col "
         style={{ width: "600px" }}
       >
@@ -77,8 +81,8 @@ function App() {
             id=""
             onChange={() => {
               setNumber((prev) => !prev);
+              id="Number"
             }}
-            id="Number"
           />
           <label className="text-orange-500 mr-3" htmlFor="Number">
             Number
@@ -102,4 +106,5 @@ function App() {
   );
 }
 
-export default App;
+
+export default App
