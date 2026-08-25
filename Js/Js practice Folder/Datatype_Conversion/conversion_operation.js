@@ -20,8 +20,8 @@ let convertedScore=Number(score)
 let number=1
 let convertedNumber=Boolean(number)
 
-console.log(convertedNumber);
-console.log(typeof convertedNumber);
+// console.log(convertedNumber);
+// console.log(typeof convertedNumber);
 
 
 // aur is trah hum number ko bollean main convert krsakte hain
@@ -32,12 +32,37 @@ let number2=45
 let convertedNumber2=String(number2)
 
 
-console.log(convertedNumber2);
-console.log(typeof convertedNumber2);
+// console.log(convertedNumber2);
+// console.log(typeof convertedNumber2);
 
 
 
 // aur number ko stirng main convert krsakte hain 
+
+let num = 2 + "2"
+let num2 = "2" + 2
+let num3 = 2 + 2 + "6"
+let num4 = "2" + 2 + 6
+
+console.log(num);
+console.log(num2);
+console.log(num3);
+console.log(num4);
+
+console.log("2"> 1);//true
+console.log("2"== 2);//true
+
+console.log(null > 0);
+console.log(null < 0);
+console.log(null >= 0);//false
+
+// this is not the write way to do that's why we use type script or ===
+
+
+
+
+
+
 
 
 
