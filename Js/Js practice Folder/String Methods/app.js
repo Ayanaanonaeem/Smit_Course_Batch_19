@@ -27,3 +27,5 @@ console.log(myString.slice(-4,-2))
 
 
 
+
+
