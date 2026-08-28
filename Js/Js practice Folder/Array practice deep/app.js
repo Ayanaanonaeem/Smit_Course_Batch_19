@@ -50,6 +50,26 @@ SHALLOW COPY MAIN REFERENCE ALAG HOTA HAI INNER OBJECT KA REFERENCE SAME HOTA HA
 
 */
 
+// Array more methods
+
+var AyanArr=["aloo","piyaz","tamatat","harimirch"]
+var Ayarr2=["fish","meat","chicken"]
+
+var combineArr=AyanArr.concat(Ayarr2)// array ko combine krta hai 
+console.log(combineArr);
+
+var mynewArr=[1,2,4,5,[5,6],[7,[9,10],11]]
+
+var flatArr=mynewArr.flat(2)// ye array jo depth hota hai usko undar se ek flat array bnadeta hai
+console.log(flatArr);
+
+console.log(Array.isArray("ayan"));//ye array check krne ke liye use hota hai
+console.log(Array.from("ayan"));//ye array banane ke liye use hota hai 
+
+let core=100
+let core2=100
+let core3=100
+console.log(Array.of(core,core2,core3));//ye kisi set ko array banane ke liye use hota hai 
 
 
 
