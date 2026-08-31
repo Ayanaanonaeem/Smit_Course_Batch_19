@@ -1,6 +1,7 @@
 import { useState } from "react";
 import "./App.css";
 import Card from "./components/Card";
+import Function from "./components/Function"
 
 function App() {
   const jobs = [
@@ -52,6 +53,7 @@ function App() {
 
   return (
     <>
+    <Function/>
       <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
         {jobs.map((elem) => (
           <Card key={elem.id} elem={elem} skills={elem.skills} />
