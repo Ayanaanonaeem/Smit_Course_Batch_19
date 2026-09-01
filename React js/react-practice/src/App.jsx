@@ -1,5 +1,6 @@
 import { useState } from "react";
 import "./App.css";
+import ObjectPractice from "./ObjectPractice";
 
 function App() {
   let [counter, setCounter] = useState(0);
@@ -21,12 +22,15 @@ function App() {
   // };
 
   const Addvalue=()=>{
-    setCounter((prev)=>(prev+1))
+     setCounter((prev)=>(prev+1))
+    console.log(counter);
+    
   }
 
   return (
     <>
       <div>
+        <ObjectPractice/>
         <p>Counter {counter}</p>
         <button onClick={Addvalue}>Add</button>
         {/* <button onClick={Removevalue}>Remove</button> */}
