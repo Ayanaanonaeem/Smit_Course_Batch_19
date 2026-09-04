@@ -71,7 +71,7 @@ let core2=100
 let core3=100
 console.log(Array.of(core,core2,core3));//ye kisi set ko array banane ke liye use hota hai 
 
-
+ 
 
 
 
