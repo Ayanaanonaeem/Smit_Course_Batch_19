@@ -61,3 +61,12 @@ switch ("mango") {
         
         break;
 }
+var str="helo"
+console.log(typeof(str));
+
+
+let obj={
+    name:"ayan"
+}
+console.log(Object.keys(obj));
+
