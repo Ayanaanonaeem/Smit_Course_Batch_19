@@ -21,6 +21,21 @@ function App() {
   //   }
   // };
 
+  // localStorage.clear()
+  // localStorage.setItem('user',"ayan")
+  // const user=localStorage.getItem("user")
+  // console.log(user);
+
+  const myObj={
+    name:"Ayan",
+    age:12
+  }
+  localStorage.setItem("user",JSON.stringify(myObj))
+  const user=JSON.parse(localStorage.getItem("user"))
+  console.log(user);
+  
+  
+
   const Addvalue=()=>{
      setCounter((prev)=>(prev+1))
     console.log(counter);
