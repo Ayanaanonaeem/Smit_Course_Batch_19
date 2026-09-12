@@ -6,7 +6,8 @@ import About from './Pages/About'
 import Contact from './Pages/Contact'
 import UserDetail from './Pages/UserDetail'
 import Data from './Pages/Data'
-
+import Productpage from './Pages/Productpage'
+import ShowData from './Pages/ShowData'
 function App() {
 
 
@@ -17,8 +18,8 @@ function App() {
         <Route path='' element={<Home/>}/>
         <Route path='about' element={<About/>}/>
         <Route path='contact' element={<Contact/>}/>
-        <Route path='contact/userDetail' element={<UserDetail/>}/> 
-        <Route path='contact/userDetail/:id' element={<UserDetail/>}/> 
+        <Route path='Productpage' element={<Productpage/>}/>
+        <Route path='Productpage/:id' element={<ShowData/>}/>
       </Route>
 
 
