@@ -7,10 +7,10 @@ const Layout = () => {
     
   return (
     <>
-    
-    <Navbar/>
-    <Outlet/>
-    <Footer/>
+     <Navbar/>
+      <Outlet/>
+      <Footer/> 
+     
     
     </>
     

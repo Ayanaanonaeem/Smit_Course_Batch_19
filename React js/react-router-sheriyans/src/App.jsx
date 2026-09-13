@@ -1,30 +1,26 @@
-import { useState } from 'react'
-import { Route,Routes } from 'react-router-dom'
-import Layout from './Layout'
-import Home from './Pages/Home'
-import About from './Pages/About'
-import Contact from './Pages/Contact'
-import UserDetail from './Pages/UserDetail'
-import Data from './Pages/Data'
-import Productpage from './Pages/Productpage'
-import ShowData from './Pages/ShowData'
+import { Routes,Route } from "react-router-dom"
+import Layout from "./Layout.jsx"
+import Home from "./Pages/Home.jsx"
+import About from "./Pages/About.jsx"
+import Contact from "./Pages/Contact.jsx"
+import Product from "./Pages/Product.jsx"
+import Productpage from "./Pages/Productpage.jsx"
 function App() {
 
 
   return (
     <>
-    <Routes>
-      <Route path='/' element={<Layout/>}>
-        <Route path='' element={<Home/>}/>
-        <Route path='about' element={<About/>}/>
-        <Route path='contact' element={<Contact/>}/>
-        <Route path='Productpage' element={<Productpage/>}/>
-        <Route path='Productpage/:id' element={<ShowData/>}/>
+     <Routes>
+      <Route path="/" element={<Layout/>}>
+       <Route path="" element={<Home/>}/>
+       <Route path="about" element={<About/>}/>
+       <Route path="contact" element={<Contact/>}/>
+       <Route path="product" element={<Product/>}/>
+       <Route path="product/:id" element={<Productpage/>}/>
+
+
       </Route>
-
-
-
-    </Routes>
+     </Routes>
     </>
   )
 }
