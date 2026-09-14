@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="parent">
+     <div class="box">Monday</div>
+     <div class="box">Tuesday</div>
+     <div class="box">Wednesday</div>
+     <div class="box">Thursday</div>
+    </div>
+    
+</body>
+<script>
+
+    const div=document.querySelector(".parent")
+    console.log(div.firstElementChild.innerText)
+    console.log(div.lastElementChild.innerText)
+    const child=document.querySelector(".box")
+    console.log(child.parentElement);
+    console.log(child.nextElementSibling);
+    console.log(div.childNodes);   
+    console.log(div.childNodes[2]="friday");
+   
+    
+    
+    
+    
+</script>
+</html>
