@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="languages">
+        <li>python</li>
+    </div>
+</body>
+<script>
+    function addli(lang){
+        const div = document.querySelector(".languages")
+        const li=document.createElement("li")
+        li.innerHTML=lang
+        div.appendChild(li)
+
+
+    }
+    addli("javascript")
+    addli("typescript")
+
+     function addOptiLi(lang){
+        const div = document.querySelector(".languages")
+        const li=document.createElement("li")
+        li.appendChild(document.createTextNode(lang))
+        div.appendChild(li)
+        
+
+
+
+    }
+     addOptiLi("C++")
+    // edit
+
+    function editLi(){
+        const li=document.querySelector("li:nth-child(2)")      
+        // li.innerHTML="mojo"
+        li.outerHTML=`<li>Mojo</li>`
+        
+    }
+    editLi()
+    function editLi2(){
+        const li=document.querySelector("li:nth-child(3)")     
+        const self_li=document.createElement("li")
+        self_li.textContent="meow"
+        li.replaceWith(self_li)
+        // li.innerHTML="mojo"
+        
+        
+    }
+    editLi2()
+     
+     function removeli(){
+        const li=document.querySelector("li:first-child") 
+        li.remove()
+        
+        
+         
+     }
+     removeli()
+</script>
+</html>
