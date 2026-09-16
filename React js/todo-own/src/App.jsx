@@ -23,7 +23,7 @@ const App = () => {
 
       setInput("");
       setEditId(null);
-    } else {
+    } else {                                   
       setTodo((prev) => [
         ...prev,
         {
