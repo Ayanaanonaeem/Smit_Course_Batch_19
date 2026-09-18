@@ -31,3 +31,5 @@ var copyObj=arr.map((val)=>{
     
 })
 console.log(copyObj);
+
+console.log("hello")
