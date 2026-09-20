@@ -24,5 +24,7 @@ console.log(typeof(undefined));//undefined ayega
 */
 // NNBBSSU  short form to remember this 
 
+console.log("hello");
+
 
 
