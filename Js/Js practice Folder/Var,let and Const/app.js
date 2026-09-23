@@ -54,3 +54,4 @@ const age=12// ye sahi hai
 
 console.table([gender,age])
 
+console.log("meow")
