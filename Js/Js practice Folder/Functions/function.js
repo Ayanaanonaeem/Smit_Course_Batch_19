@@ -25,3 +25,4 @@ function meow(name){
 var result=meow("Ayan")
 console.log(result);
 console.log("hello")
+console.log("Hero")
