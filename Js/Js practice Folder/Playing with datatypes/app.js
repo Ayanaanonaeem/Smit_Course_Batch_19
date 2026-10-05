@@ -84,7 +84,7 @@ console.log(userOne["name1"]); //for accesing keys in obj
 // yhn pr user two ko reference mila copy nahi milli is wjh se direct user one main change huwa 
 
 
-console.log("hi");
+
 
 
 
