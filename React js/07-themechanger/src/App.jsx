@@ -1,28 +1,31 @@
 import { useEffect, useState } from "react";
 
+import {ThemeContextProvider}  from "./context/theme";
 import "./App.css";
-import { ThemeProvider } from "./context/theme";
 import ThemeBtn from "./Components/ThemeBtn";
 import Card from "./Components/Card";
 
 function App() {
-  const [themeMode,setThemeMode]=useState("light")
+ 
+  const [theme,setTheme]=useState()
+
   const lightTheme=()=>{
-    setThemeMode("light")
+    setTheme("light")
   }
   const darkTheme=()=>{
-    setThemeMode("dark")
+    setTheme("dark")
   }
+
 
   // actual change in theme
   useEffect(() => {
     const  changeTheme=document.querySelector('html')
     changeTheme.classList.remove("light","dark")
-    changeTheme.classList.add(themeMode)
-  }, [themeMode])
+    changeTheme.classList.add(theme)
+  }, [theme])
   
   return (
-    <ThemeProvider value={{darkTheme,lightTheme,themeMode}}>
+  <ThemeContextProvider value={{theme,darkTheme,lightTheme}}>
       <div className="flex flex-wrap min-h-screen items-center">
         <div className="w-full">
           <div className="w-full max-w-sm mx-auto flex justify-end mb-4">
@@ -34,7 +37,8 @@ function App() {
           </div>
         </div>
       </div>
-    </ThemeProvider>
+    </ThemeContextProvider>
+    
   );
 }
 
