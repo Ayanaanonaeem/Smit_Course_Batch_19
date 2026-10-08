@@ -14,12 +14,3 @@ The React Compiler is not enabled on this template because of its impact on dev 
 ## Expanding the ESLint configuration
 
 If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
-
-
-```
-so char step hote hain context banane ke 
-
-1. sbse pehle context create kro phr usko variable main save krke export krdo
-2. phr ek provider function bnao jismain apne variable define krdo aur usko value main daldo aur props main children lekr then jo context bnaya tha uske agey .provider laga kr wrap krdo
-3. phr usfunction ko export krdo aur app.js main ya main.js main use krdo
-4. ab context ko use kro aur jo uper context bnake export kiya tha usse uscontext ke undar daldo

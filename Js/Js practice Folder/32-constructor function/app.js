@@ -13,4 +13,4 @@ let user_1=new User("ayan",12,"Frontend")
 let user_2=new User("Shaghil",20,"Backend")
 
 console.log(user_1);
-console.log(user_2);
+console.log(user_2.greeting());

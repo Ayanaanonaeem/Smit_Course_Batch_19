@@ -2,13 +2,13 @@ import React, { createContext, useState } from 'react'
 
 export const themeDataContext=createContext()
 
-const ThemContext = (props) => {
+const ThemContext = ({children}) => {
   const [theme,setTheme]=useState("dark")
   return (
     <div>
       <themeDataContext.Provider value={[theme,setTheme]}>
 
-      {props.children}
+      {children}
 
       </themeDataContext.Provider>
     </div>
