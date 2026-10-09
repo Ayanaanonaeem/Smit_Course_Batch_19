@@ -3,7 +3,7 @@ import "./App.css";
 import ObjectPractice from "./ObjectPractice";
 
 function App() {
-  let [counter, setCounter] = useState(0);
+  let [counter, setCounter] = useState([]);
 
   // const Addvalue = () => {
   //   if (counter >= 20) {
@@ -37,8 +37,13 @@ function App() {
   
 
   const Addvalue=()=>{
-     setCounter((prev)=>(prev+1))
-    console.log(counter);
+     setCounter((prev)=>{
+       [...prev,{id:1,todo:"mytodo"}]
+       console.log(prev);
+       
+      
+    })
+  
     
   }
 
