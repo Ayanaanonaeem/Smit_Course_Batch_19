@@ -24,7 +24,7 @@ console.log(myString.charAt(1))
 console.log(myString.slice(-4,-2))
 
 
-
+console.log("hello")
 
 
 
