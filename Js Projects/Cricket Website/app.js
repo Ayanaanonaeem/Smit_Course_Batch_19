@@ -1,218 +1,356 @@
+
 const firstInput = document.getElementById("first-input");
 const firstBtn = document.getElementById("first-btn");
+
 const firstDiv = document.getElementById("first");
-let playerName;
 const secondDiv = document.getElementById("second");
-const para = document.getElementsByClassName("teams");
-let selectedTeam;
 const thirdDiv = document.getElementById("third");
-const thirdDivPara = document.querySelectorAll(".toss");
-const bat = document.getElementById("bat");
-const bowl = document.getElementById("bowl");
 const fourthDiv = document.getElementById("fourth");
-let userselection;
 const fifthDiv = document.getElementById("fifth");
 const sixthDiv = document.getElementById("sixth");
-let score = document.getElementById("score");
-let wicket = document.getElementById("wicket");
-let paragraph;
-let paragraph_2;
-let paragraph_3;
-let scoreAndwicketRandomNum;
-let wicketRandomNum;
-var wicketName;
-let scoreRandomNum;
-var scoreName;
-var currentWicket;
-var currentscore;
-var targetchild;
-var target;
-let numTarget;
+
+const teams = document.querySelectorAll(".teams");
+const tossOptions = document.querySelectorAll(".toss");
+
+const bat = document.getElementById("bat");
+const bowl = document.getElementById("bowl");
+
+const scoreElement = document.getElementById("score");
+const wicketElement = document.getElementById("wicket");
+
 const para1 = document.getElementById("sixthpara1");
 const para2 = document.getElementById("sixthpara2");
 const para3 = document.getElementById("sixthpara3");
 const para4 = document.getElementById("sixthpara4");
+
 const batting = {
-	wicket: ["bowled", "lbw", "caught", "runout"],
-	score: [0, 1, 2, 3, 4, 5, 6],
+    wickets: ["Bowled", "LBW", "Caught", "Run Out"],
+    runs: [0, 1, 2, 3, 4, 6],
 };
 
-let myobj = {
-	score: 0,
-	out: 0,
-	target: 0,
+// Game state
+const game = {
+    playerName: "",
+    selectedTeam: "",
+    userChoice: "",
+
+    currentScore: 0,
+    wickets: 0,
+    target: 0,
+
+    innings: 1,
+    battingSide: "user",
+
+    matchStarted: false,
+    gameOver: false,
 };
+
+let messageElement;
+
+
+// HELPER FUNCTIONS
+
+function showSection(sectionToShow) {
+    [firstDiv, secondDiv, thirdDiv, fourthDiv, fifthDiv, sixthDiv]
+        .forEach((section) => {
+            section.classList.add("none");
+            section.classList.remove("flex");
+        });
+
+    sectionToShow.classList.remove("none");
+    sectionToShow.classList.add("flex");
+}
+
+function updateScoreboard() {
+    scoreElement.innerText = game.currentScore;
+    wicketElement.innerText = game.wickets;
+
+    para1.innerText = `Player name: ${game.playerName}`;
+    para2.innerText = `Selected Team: ${game.selectedTeam}`;
+
+    if (game.innings === 1) {
+        para4.innerText = "Target: Not set";
+    } else {
+        para4.innerText = `Target: ${game.target}`;
+    }
+
+    para3.innerText =
+        game.battingSide === "user"
+            ? "You are Batting"
+            : "You are Bowling";
+}
+
+function showMessage(message) {
+    if (messageElement) {
+        messageElement.innerText = message;
+    }
+}
+
+function randomItem(array) {
+    return array[Math.floor(Math.random() * array.length)];
+}
+
+// STEP 1: ENTER PLAYER NAME
+-
 
 firstBtn.addEventListener("click", function () {
-	if (firstInput.value == "") {
-		alert("please enter a value first");
-	} else {
-		playerName = firstInput.value;
-		firstDiv.classList.replace("flex", "none");
-		secondDiv.classList.replace("none", "flex");
-	}
+    const name = firstInput.value.trim();
+
+    if (!name) {
+        alert("Please enter your name first!");
+        firstInput.focus();
+        return;
+    }
+
+    game.playerName = name;
+
+    showSection(secondDiv);
 });
 
-for (let i = 0; i < para.length; i++) {
-	para[i].addEventListener("click", function () {
-		selectedTeam = para[i].innerText;
-		secondDiv.classList.replace("flex", "none");
-		thirdDiv.classList.replace("none", "flex");
-	});
-}
+// Allow Enter to submit the name.
+firstInput.addEventListener("keydown", function (event) {
+    if (event.key === "Enter") {
+        firstBtn.click();
+    }
+});
 
-// alert("now it a time for toss chose one")
 
-var randomTossNumber = Math.ceil(Math.random() * 2);
-var anotherRandomNum = Math.ceil(Math.random() * 2);
-var batBallArray = ["none", "bat", "ball"];
+// STEP 2: SELECT TEAM
 
-var randomSelection = batBallArray[Math.ceil(Math.random() * 2)];
 
-for (let i = 0; i < thirdDivPara.length; i++) {
-	thirdDivPara[i].addEventListener("click", function () {
-		if (randomTossNumber == 2) {
-			alert("You won the toss now choose bat or ball");
-			thirdDiv.classList.replace("flex", "none");
-			fourthDiv.classList.replace("none", "flex");
-		} else if (randomTossNumber == 1) {
-			alert(
-				`You loss the toss and the computer selected to ${randomSelection} first`,
-			);
-			thirdDiv.classList.replace("flex", "none");
-			sixthDiv.classList.replace("none", "flex");
+teams.forEach(function (team) {
+    team.addEventListener("click", function () {
+        game.selectedTeam = team.innerText.trim();
 
-			sixthDiv.addEventListener("click", function () {
-				sixthDiv.classList.replace("flex", "none");
-				if (randomSelection == "bat") {
-					Batting();
-				} else {
-					Bowling();
-				}
-			});
-		}
-	});
-}
-var flag = 0;
-function handleKeyPress(e) {
-	if (e.key == " ") {
-		scoreAndwicketRandomNum = Math.floor(Math.random() * 2);
-		wicketRandomNum = Math.floor(Math.random() * 4);
-		wicketName = batting.wicket[wicketRandomNum];
+        showSection(thirdDiv);
+    });
+});
 
-		if (scoreAndwicketRandomNum == 0) {
-			myobj.out = myobj.out + 1;
-			wicket.innerText = myobj.out;
-			alert(wicketName);
-			checkingTarget();
 
-			if (myobj.out == 11 && flag == 0) {
-				alert("So you are all out click okay for next innings");
-				alert("Now you are bowling");
-				para3.innerText = "Bowling";
+// STEP 3: TOSS
 
-				wicket.innerText = 0;
-				myobj.out = 0;
-				myobj.target = Number(score.innerText) + 1;
-				para4.innerText = "Target: " + myobj.target;
-				score.innerText = 0;
-				myobj.score = 0;
-			}
-		} else {
-			scoreRandomNum = Math.floor(Math.random() * 7);
-			scoreName = batting.score[scoreRandomNum];
-			myobj.score = Number(score.innerHTML) + scoreName;
-			score.innerText = myobj.score;
 
-			alert(scoreName + " run");
-			checkingTarget();
-		}
-	}
-}
+tossOptions.forEach(function (option) {
+    option.addEventListener("click", function () {
+        const playerToss = option.innerText.trim();
+
+        const computerToss =
+            Math.random() < 0.5 ? "Heads" : "Tails";
+
+        if (playerToss === computerToss) {
+            alert("You won the toss! Choose Bat or Bowl.");
+
+            showSection(fourthDiv);
+        } else {
+            game.userChoice = Math.random() < 0.5 ? "bat" : "bowl";
+
+            alert(
+                `You lost the toss! Computer chose to ${
+                    game.userChoice === "bat" ? "bat" : "bowl"
+                } first.`
+            );
+
+            // If computer chooses to bat, user bowls first.
+            // If computer chooses to bowl, user bats first.
+            game.battingSide =
+                game.userChoice === "bat" ? "user" : "computer";
+
+            showSection(sixthDiv);
+        }
+    });
+});
+
+
+// STEP 4: USER CHOOSES BAT
+
 
 function Batting() {
-	userselection = bat.innerText;
-	// console.log(userselection);
-	alert("You are batting first");
+    if (game.matchStarted || game.gameOver) return;
 
-	fourthDiv.classList.replace("flex", "none");
-	fifthDiv.classList.replace("none", "flex");
-	para3.innerText = userselection + "ting";
-	para1.innerText = "Player name:" + playerName;
-	para2.innerText = "Selected Team:" + selectedTeam;
+    game.userChoice = "bat";
+    game.battingSide = "user";
 
-	document.addEventListener("keypress", handleKeyPress);
+    startMatch();
 }
 
-function handleKeyPressGame(e) {
-	if (e.key == " ") {
-		scoreAndwicketRandomNum = Math.floor(Math.random() * 2);
-		wicketRandomNum = Math.floor(Math.random() * 4);
-		wicketName = batting.wicket[wicketRandomNum];
+// STEP 5: USER CHOOSES BOWL
 
-		if (scoreAndwicketRandomNum == 0) {
-			myobj.out = myobj.out + 1;
-			wicket.innerText = myobj.out;
 
-			alert(wicketName);
-			checkingTarget();
-
-			if (myobj.out == 11 && flag == 0) {
-				alert("So you are all out click okay for next innings");
-				alert("Now you are batting");
-				para3.innerText = "Batting";
-
-				wicket.innerText = 0;
-				myobj.out = 0;
-				myobj.target = Number(score.innerText) + 1;
-				para4.innerText = "Target: " + myobj.target;
-				score.innerText = 0;
-				myobj.score = 0;
-			}
-		} else {
-			scoreRandomNum = Math.floor(Math.random() * 7);
-			scoreName = batting.score[scoreRandomNum];
-			myobj.score = Number(score.innerHTML) + scoreName;
-			score.innerText = myobj.score;
-
-			alert(scoreName + " run");
-			checkingTarget();
-		}
-	}
-}
 function Bowling() {
-	userselection = bowl.innerText;
-	alert("You are bowling");
-	fourthDiv.classList.replace("flex", "none");
-	fifthDiv.classList.replace("none", "flex");
+    if (game.matchStarted || game.gameOver) return;
 
-	para1.innerText = "Player name:" + playerName;
-	para2.innerText = "Selected Team:" + selectedTeam;
-	para3.innerText = userselection + "ing";
+    game.userChoice = "bowl";
+    game.battingSide = "computer";
 
-	document.addEventListener("keypress", handleKeyPressGame);
+    startMatch();
 }
 
-function checkingTarget() {
-	if (myobj.target != 0) {
-		if (userselection == "Bat") {
-			if (myobj.score > myobj.target) {
-				alert("You lose the match");
-				fifthDiv.classList.replace("flex", "none");
-			} else if (myobj.score < myobj.target && myobj.out == 11) {
-				alert("You won the match");
-				flag++;
-				fifthDiv.classList.replace("flex", "none");
-			}
-		} else {
-			if (myobj.score < myobj.target && myobj.out == 11) {
-				alert("you lose the match");
-				fifthDiv.classList.replace("flex", "none");
-			} else if (myobj.score > myobj.target) {
-				alert("you won the match");
-				fifthDiv.classList.replace("flex", "none");
 
-			}
-		}
-	}
+// START MATCH
+
+
+function startMatch() {
+    game.currentScore = 0;
+    game.wickets = 0;
+    game.target = 0;
+    game.innings = 1;
+    game.matchStarted = true;
+    game.gameOver = false;
+
+    // Add a live match message without changing the HTML.
+    messageElement = document.getElementById("match-message");
+
+    if (!messageElement) {
+        messageElement = document.createElement("p");
+        messageElement.id = "match-message";
+
+        const heading = fifthDiv.querySelector("h1");
+
+        heading.insertAdjacentElement("afterend", messageElement);
+    }
+
+    showSection(fifthDiv);
+    updateScoreboard();
+
+    showMessage(
+        "Press SPACE to play the next ball."
+    );
 }
+
+
+// PLAY ONE BALL
+
+
+function playBall() {
+    if (!game.matchStarted || game.gameOver) return;
+
+    // A wicket occurs on approximately 1 out of 6 balls.
+    const isWicket = Math.floor(Math.random() * 6) === 0;
+
+    if (isWicket) {
+        game.wickets++;
+
+        const dismissal = randomItem(batting.wickets);
+
+        showMessage(
+            `WICKET! ${dismissal} — ${game.wickets} wicket(s) down.`
+        );
+    } else {
+        const runs = randomItem(batting.runs);
+
+        game.currentScore += runs;
+
+        showMessage(
+            runs === 0
+                ? "Dot ball! No runs scored."
+                : `${runs} run(s)! Current score: ${game.currentScore}.`
+        );
+    }
+
+    updateScoreboard();
+
+    // Check whether the chasing side has won.
+    if (
+        game.innings === 2 &&
+        game.battingSide === "user" &&
+        game.currentScore >= game.target
+    ) {
+        endMatch(true);
+        return;
+    }
+
+    if (
+        game.innings === 2 &&
+        game.battingSide === "computer" &&
+        game.currentScore >= game.target
+    ) {
+        endMatch(false);
+        return;
+    }
+
+    // Ten wickets means the innings is over.
+    if (game.wickets >= 10) {
+        finishInnings();
+    }
+}
+
+
+// END FIRST INNINGS / START SECOND
+
+
+function finishInnings() {
+    if (game.innings === 1) {
+        const firstInningsScore = game.currentScore;
+
+        game.target = firstInningsScore + 1;
+        game.innings = 2;
+
+        // Switch batting side.
+        game.battingSide =
+            game.battingSide === "user" ? "computer" : "user";
+
+        game.currentScore = 0;
+        game.wickets = 0;
+
+        updateScoreboard();
+
+        showMessage(
+            `First innings complete! Target: ${game.target}. Second innings begins!`
+        );
+
+        alert(
+            `Innings complete! Target is ${game.target} runs.`
+        );
+
+        return;
+    }
+
+    // If the second innings ends without reaching the target,
+    // the first innings team wins.
+    const userWon = game.battingSide === "computer";
+
+    endMatch(userWon);
+}
+
+
+// MATCH RESULT
+
+
+function endMatch(userWon) {
+    game.gameOver = true;
+    game.matchStarted = false;
+
+    const result = userWon
+        ? "🏆 YOU WON THE MATCH!"
+        : "🏏 COMPUTER WON THE MATCH!";
+
+    showMessage(
+        `${result} Final score: ${game.currentScore}/${game.wickets}`
+    );
+
+    alert(result);
+}
+
+
+// SPACEBAR CONTROLS
+
+
+document.addEventListener("keydown", function (event) {
+    if (event.code !== "Space") return;
+    if (!game.matchStarted || game.gameOver) return;
+
+    // Prevent page scrolling while playing.
+    event.preventDefault();
+
+    playBall();
+});
+
+
+// COMPUTER'S FIRST INNINGS
+
+
+sixthDiv.querySelector("button").addEventListener("click", function () {
+    if (game.matchStarted || game.gameOver) return;
+
+    startMatch();
+});

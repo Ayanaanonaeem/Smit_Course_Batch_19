@@ -1,53 +1,66 @@
 <!doctype html>
 <html lang="en">
-	<head>
-		<meta charset="UTF-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		<title>Cricket Project</title>
-		<link rel="stylesheet" href="style.css" />
-	</head>
-	<body>
-		<div id="first" class="flex">
-			<input type="text" placeholder="Enter your name" id="first-input" />
-			<br />
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Cricket Project</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div id="first" class="flex">
+      <input type="text" placeholder="Enter your name" id="first-input" />
+      <br />
 
-			<button id="first-btn">OK</button>
-		</div>
+      <button id="first-btn">OK</button>
+    </div>
 
-        <div id="second" class="none">
-            <p class="teams">Pakistan</p>
-            <p class="teams">India</p>
-            <p class="teams">Srilanka</p>
-            <p class="teams">England</p>
-            <p class="teams">Australia</p>
-            <p class="teams">Ayan Warriors</p>
+    <div id="second" class="none">
+      <p class="teams">Pakistan</p>
+      <p class="teams">India</p>
+      <p class="teams">Srilanka</p>
+      <p class="teams">England</p>
+      <p class="teams">Australia</p>
+      <p class="teams">Ayan Warriors</p>
+    </div>
+
+    <div id="third" class="none">
+      <p class="toss">Heads</p>
+      <p class="toss">Tails</p>
+    </div>
+
+    <div id="fourth" class="none">
+      <p id="bat" class="do" onclick="Batting()">Bat</p>
+      <p id="bowl" class="do" onclick="Bowling()">Bowl</p>
+    </div>
+    <div id="sixth" class="none">
+      <button>Play</button>
+    </div>
+
+    <div id="fifth" class="none">
+      <h1>🏏 Cricket Arena</h1>
+
+      <div class="match-info">
+        <p id="sixthpara1">Player name</p>
+        <p id="sixthpara2">Team</p>
+        <p id="sixthpara3">Bat/bowl</p>
+        <p id="sixthpara4">Target:</p>
+      </div>
+
+      <div class="scoreboard">
+        <div class="score-item">
+          <span class="score-label">TOTAL RUNS</span>
+          <span id="score">0</span>
         </div>
 
-		<div id="third" class="none">
-			<p class="toss">Heads</p>
-			<p class="toss">Tails</p>
-		</div>
-        
-		<div id="fourth" class="none">
-			<p id="bat" class="do" onclick="Batting()">Bat</p>
-			<p id="bowl" class="do" onclick="Bowling()">Bowl</p>
-		</div>
-		<div id="sixth" class="none">
-			<button>Play</button>
-		</div>
-		<div id="fifth" class="none">
-			<h1>Press space for start playing game</h1>
-			<p id="sixthpara1">Player name</p>
-			<p id="sixthpara2">Team</p>
-			<p id="sixthpara3">Bat/bowl</p>
-			<p id="sixthpara4">Target:</p>
-			<p>Score <span id="score">0</span></p>
-			<p>Wickets <span id="wicket">0</span></p>
-		</div>
-       
+        <div class="score-divider"></div>
 
-        
+        <div class="score-item">
+          <span class="score-label">WICKETS</span>
+          <span id="wicket">0</span>
+        </div>
+      </div>
+    </div>
 
-		<script src="app.js"></script>
-	</body>
+    <script src="app.js"></script>
+  </body>
 </html>
