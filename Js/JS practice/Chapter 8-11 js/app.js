@@ -38,6 +38,8 @@ newhello=Number(hello)
 parseInt(hello)
 parseFloat(hello)
 console.log(typeof(newhello));
+console.log(typeof(newhello));
+console.log(typeof(newhello));
 
 
 
