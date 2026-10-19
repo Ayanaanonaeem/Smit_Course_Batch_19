@@ -36,4 +36,5 @@ para1txt.innerHTML="hello"
 var div=document.getElementById("div")
 var para2=div.getElementsByTagName("p")
 console.log(para2);
+console.log(para1);
 
