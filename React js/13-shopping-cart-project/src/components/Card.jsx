@@ -1,135 +1,88 @@
-import React from 'react'
 
-const Card = ({data , handleAddToCart,AddedToCart, showRemoveCart, RemoveCartItem}) => {
+import React from "react";
 
- const {category,images,description,title}=data
+const Card = ({
+  data,
+  handleAddToCart,
+  itemAdded,
+  showCartItem,
+  handleRemoveCart,
+}) => {
+  const { category, description, images, title, price } = data;
 
- 
+  const image =
+    (Array.isArray(images) && images.length > 0 && images[0]) ||
+    "https://placehold.co/600x600/f1f5f9/64748b?text=Product";
 
- 
-    
-    
-    
+  const categoryName =
+    typeof category === "object" ? category?.name : category;
+
   return (
- 
-      <div className="p-4 md:w-1/3">
-        <div className="h-full border-2 border-gray-200 border-opacity-60 rounded-lg overflow-hidden">
-          <img
-            className="lg:h-48 md:h-36 w-full object-cover object-center"
-            src={images[0]}
-            alt="blog"
-          />
-          <div className="p-6">
-            <h2 className="tracking-widest text-xs title-font font-medium text-gray-400 mb-1">
-              {category.name}
-            </h2>
-            <h1 className="title-font text-lg font-medium text-gray-900 mb-3">
-              {title}
-            </h1>
-            <p className="leading-relaxed mb-3">
-             {description}
+    <article className="group flex h-full flex-col overflow-hidden rounded-3xl border border-slate-200/80 bg-white p-3 shadow-sm transition duration-300 hover:-translate-y-1 hover:border-violet-200 hover:shadow-xl hover:shadow-violet-100/60">
+      {/* Product image */}
+      <div className="relative overflow-hidden rounded-2xl bg-slate-100">
+        <img
+          src={image}
+          alt={title || "Product"}
+          loading="lazy"
+          className="h-60 w-full object-cover transition duration-500 group-hover:scale-105"
+        />
+
+        <span className="absolute left-3 top-3 max-w-[75%] truncate rounded-full border border-white/70 bg-white/90 px-3 py-1.5 text-[10px] font-bold uppercase tracking-wider text-slate-700 shadow-sm backdrop-blur">
+          {categoryName || "Collection"}
+        </span>
+
+        {itemAdded && !showCartItem && (
+          <span className="absolute right-3 top-3 rounded-full bg-emerald-500 px-3 py-1.5 text-[10px] font-bold text-white shadow-sm">
+            IN CART ✓
+          </span>
+        )}
+      </div>
+
+      {/* Product details */}
+      <div className="flex flex-1 flex-col px-2 pb-2 pt-5">
+        <h3 className="line-clamp-1 text-base font-bold text-slate-900 transition group-hover:text-violet-700">
+          {title || "Untitled product"}
+        </h3>
+
+        <p className="mt-2 line-clamp-2 min-h-10 text-xs leading-5 text-slate-500">
+          {description || "Discover the details of this product."}
+        </p>
+
+        <div className="mt-5 flex items-center justify-between gap-3">
+          <div>
+            <p className="text-[10px] font-semibold uppercase tracking-widest text-slate-400">
+              Price
             </p>
-            <div className="flex items-center flex-wrap ">
-              <div onClick={handleAddToCart} className="text-indigo-500 inline-flex items-center md:mb-2 lg:mb-0 cursor-pointer">
-                {AddedToCart? "Added":"Add To Cart"}
-                <svg
-                  className="w-4 h-4 ml-2"
-                  viewBox="0 0 24 24"
-                  stroke="currentColor"
-                  strokeWidth={2}
-                  fill="none"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                >
-                  <path d="M5 12h14" />
-                  <path d="M12 5l7 7-7 7" />
-                </svg>
-              </div>
-              <span className="text-gray-400 mr-3 inline-flex items-center lg:ml-auto md:ml-0 ml-auto leading-none text-sm pr-3 py-1 border-r-2 border-gray-200">
-                <svg
-                  className="w-4 h-4 mr-1"
-                  stroke="currentColor"
-                  strokeWidth={2}
-                  fill="none"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  viewBox="0 0 24 24"
-                >
-                  <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z" />
-                  <circle cx={12} cy={12} r={3} />
-                </svg>
-                1.2K
-              </span>
-              <span className="text-gray-400 inline-flex items-center leading-none text-sm">
-                <svg
-                  className="w-4 h-4 mr-1"
-                  stroke="currentColor"
-                  strokeWidth={2}
-                  fill="none"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  viewBox="0 0 24 24"
-                >
-                  <path d="M21 11.5a8.38 8.38 0 01-.9 3.8 8.5 8.5 0 01-7.6 4.7 8.38 8.38 0 01-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 01-.9-3.8 8.5 8.5 0 014.7-7.6 8.38 8.38 0 013.8-.9h.5a8.48 8.48 0 018 8v.5z" />
-                </svg>
-                6
-              </span>
-            </div>
-            {
-              showRemoveCart && (
-                <div className="flex items-center flex-wrap ">
-              <div onClick={RemoveCartItem} className="text-indigo-500 inline-flex items-center md:mb-2 lg:mb-0 cursor-pointer">
-                Remove Cart
-                <svg
-                  className="w-4 h-4 ml-2"
-                  viewBox="0 0 24 24"
-                  stroke="currentColor"
-                  strokeWidth={2}
-                  fill="none"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                >
-                  <path d="M5 12h14" />
-                  <path d="M12 5l7 7-7 7" />
-                </svg>
-              </div>
-              <span className="text-gray-400 mr-3 inline-flex items-center lg:ml-auto md:ml-0 ml-auto leading-none text-sm pr-3 py-1 border-r-2 border-gray-200">
-                <svg
-                  className="w-4 h-4 mr-1"
-                  stroke="currentColor"
-                  strokeWidth={2}
-                  fill="none"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  viewBox="0 0 24 24"
-                >
-                  <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z" />
-                  <circle cx={12} cy={12} r={3} />
-                </svg>
-                1.2K
-              </span>
-              <span className="text-gray-400 inline-flex items-center leading-none text-sm">
-                <svg
-                  className="w-4 h-4 mr-1"
-                  stroke="currentColor"
-                  strokeWidth={2}
-                  fill="none"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  viewBox="0 0 24 24"
-                >
-                  <path d="M21 11.5a8.38 8.38 0 01-.9 3.8 8.5 8.5 0 01-7.6 4.7 8.38 8.38 0 01-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 01-.9-3.8 8.5 8.5 0 014.7-7.6 8.38 8.38 0 013.8-.9h.5a8.48 8.48 0 018 8v.5z" />
-                </svg>
-                6
-              </span>
-            </div>
-              )
-
-            }
+            <p className="mt-1 text-xl font-black tracking-tight text-slate-900">
+              {price != null ? `$${Number(price).toFixed(2)}` : "N/A"}
+            </p>
           </div>
-        </div>
-      </div> 
-  )
-}
 
-export default Card
+          {showCartItem ? (
+            <button
+              onClick={handleRemoveCart}
+              className="rounded-xl border border-rose-200 px-4 py-3 text-xs font-bold text-rose-600 transition hover:border-rose-600 hover:bg-rose-50"
+            >
+              Remove
+            </button>
+          ) : (
+            <button
+              onClick={handleAddToCart}
+              disabled={itemAdded}
+              className={`rounded-xl px-4 py-3 text-xs font-bold transition ${
+                itemAdded
+                  ? "cursor-not-allowed bg-emerald-50 text-emerald-700"
+                  : "bg-slate-950 text-white hover:bg-violet-600"
+              }`}
+            >
+              {itemAdded ? "Added ✓" : "Add to cart +"}
+            </button>
+          )}
+        </div>
+      </div>
+    </article>
+  );
+};
+
+export default Card;
