@@ -1,5 +1,8 @@
+import { useContext } from "react";
+import ThemeContext from "../context/ThemeContext";
 
 function Home() {
+  const {theme,setTheme}=useContext(ThemeContext)
   const features = [
     {
       number: "01",
@@ -22,7 +25,7 @@ function Home() {
   ];
 
   return (
-    <main className="min-h-screen bg-gray-950 text-white">
+    <main className={`${theme=="dark"?`bg-gray-600 text-black`:"bg-white text-black"}min-h-screen`}>
 
       {/* Hero Section */}
       <section className="relative overflow-hidden px-6 py-24 md:py-32">
@@ -88,7 +91,7 @@ function Home() {
             {features.map((feature) => (
               <div
                 key={feature.number}
-                className="group rounded-2xl border border-gray-800 bg-gray-900 p-8 transition duration-300 hover:-translate-y-2 hover:border-cyan-400/50"
+                className={`group rounded-2xl border border-gray-800 bg-gray-900 p-8 transition duration-300 hover:-translate-y-2 hover:border-cyan-400/50 ${theme=="light"?`text-white`:`text-white`}`}
               >
                 <span className="text-sm font-bold text-cyan-400">
                   {feature.number}
@@ -96,7 +99,7 @@ function Home() {
 
                 <h3 className="mt-5 text-xl font-bold transition group-hover:text-cyan-400">
                   {feature.title}
-                </h3>
+                </h3> 
 
                 <p className="mt-4 leading-7 text-gray-400">
                   {feature.description}
@@ -112,7 +115,7 @@ function Home() {
 
       {/* CTA Section */}
       <section className="px-6 pb-20">
-        <div className="mx-auto max-w-6xl rounded-3xl border border-cyan-400/20 bg-gradient-to-br from-gray-900 to-gray-950 px-6 py-14 text-center md:py-20">
+        <div className={`mx-auto max-w-6xl rounded-3xl border border-cyan-400/20 bg-gradient-to-br from-gray-900 to-gray-950 px-6 py-14 text-center md:py-20 ${theme=="light"?`text-white`:`text-white`}`}>
           <h2 className="text-3xl font-bold md:text-4xl">
             Have an Idea in Mind?
           </h2>

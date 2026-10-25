@@ -12,12 +12,14 @@ import Login from './auth/Login'
 import BookDetails from './Books/BookDetails'
 import Books from './Books/Books'
 import NotFound from './Components/NotFound'
+import {ThemeContextProvider} from './context/ThemeContext'
 
 function App() {
 
 
   return (
     <>
+    <ThemeContextProvider>
      <BrowserRouter>
       <Header/>
      <Routes>
@@ -40,7 +42,7 @@ function App() {
      </Routes>
      <Footer/>
      </BrowserRouter>
-
+     </ThemeContextProvider>
     </>
   )
 }
