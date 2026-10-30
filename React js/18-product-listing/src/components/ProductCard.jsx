@@ -1,68 +1,135 @@
-import React from 'react'
-import { Link } from 'react-router-dom'
 
-const ProductCard = ({items}) => {
-   
-    const {category,price,description,thumbnail,id,title}=items
-    
+import React from "react";
+import { Link } from "react-router-dom";
+
+const ProductCard = ({ items }) => {
+  const {
+    title,
+    description,
+    price,
+    category,
+    thumbnail,
+    id,
+    rating,
+    discountPercentage,
+  } = items;
+
+  const oldPrice = price / (1 - discountPercentage / 100);
+
   return (
-   <Link to={`/products/${id}`} className="p-4 md:w-1/3 shadow-xl ">
-  <div className="h-full border-2 border-gray-200 border-opacity-60 rounded-lg overflow-hidden">
-    <img
-      className="lg:h-48 md:h-36 w-full object-cover object-center"
-      src={thumbnail}
-      alt="blog"
-    />
-    <div className="p-6">
-      <h2 className="tracking-widest text-xs title-font font-medium text-gray-400 mb-1">
-        {category}
-      </h2>
-      <h1 className="title-font text-lg font-medium text-gray-900 mb-3">
-        {title}
-      </h1>
-      <p className="leading-relaxed mb-3">
-        {description}
-      </p>
-      <div className="flex items-center flex-wrap ">
-        <button className="text-indigo-500 inline-flex items-center md:mb-2 lg:mb-0">
-          Add to Cart
-         
-        </button>
-        <span className="text-gray-400 mr-3 inline-flex items-center lg:ml-auto md:ml-0 ml-auto leading-none text-sm pr-3 py-1 border-r-2 border-gray-200">
+    <Link
+      to={`/products/${id}`}
+      className="group flex flex-col h-full bg-white rounded-2xl overflow-hidden border border-purple-100 hover:border-purple-300 shadow-sm hover:shadow-xl hover:shadow-purple-100/70 hover:-translate-y-1 transition-all duration-300"
+    >
+      {/* Product Image */}
+      <div className="relative overflow-hidden bg-[#faf8ff] p-4">
+
+        <div className="h-52 sm:h-56 w-full overflow-hidden rounded-xl bg-white">
+          <img
+            className="h-full w-full object-contain p-3 group-hover:scale-110 transition-transform duration-500"
+            src={thumbnail}
+            alt={title}
+            loading="lazy"
+          />
+        </div>
+
+        {/* Discount Badge */}
+        {discountPercentage > 0 && (
+          <span className="absolute top-6 left-6 rounded-lg bg-purple-600 px-3 py-1.5 text-xs font-bold text-white shadow-md">
+            -{Math.round(discountPercentage)}% OFF
+          </span>
+        )}
+
+        {/* Wishlist Icon */}
+        <div className="absolute top-6 right-6 flex h-9 w-9 items-center justify-center rounded-full bg-white text-purple-600 shadow-sm transition-all duration-300 group-hover:bg-purple-600 group-hover:text-white">
           <svg
-            className="w-4 h-4 mr-1"
-            stroke="currentColor"
-            strokeWidth={2}
+            className="h-5 w-5"
             fill="none"
-            strokeLinecap="round"
-            strokeLinejoin="round"
+            stroke="currentColor"
+            strokeWidth={1.8}
             viewBox="0 0 24 24"
           >
-            <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z" />
-            <circle cx={12} cy={12} r={3} />
+            <path
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              d="M20.8 4.6a5.5 5.5 0 00-7.8 0L12 5.7l-1.1-1.1a5.5 5.5 0 00-7.8 7.8l1.1 1.1L12 21l7.8-7.5 1.1-1.1a5.5 5.5 0 00-.1-7.8z"
+            />
           </svg>
-          {price}
-        </span>
-        <span className="text-gray-400 inline-flex items-center leading-none text-sm">
-          <svg
-            className="w-4 h-4 mr-1"
-            stroke="currentColor"
-            strokeWidth={2}
-            fill="none"
-            strokeLinecap="round"
-            strokeLinejoin="round"
-            viewBox="0 0 24 24"
-          >
-            <path d="M21 11.5a8.38 8.38 0 01-.9 3.8 8.5 8.5 0 01-7.6 4.7 8.38 8.38 0 01-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 01-.9-3.8 8.5 8.5 0 014.7-7.6 8.38 8.38 0 013.8-.9h.5a8.48 8.48 0 018 8v.5z" />
-          </svg>
-          6
-        </span>
+        </div>
       </div>
-    </div>
-  </div>
-</Link>
 
-  )
-}
+      {/* Product Details */}
+      <div className="flex flex-1 flex-col p-5">
 
-export default ProductCard
+        {/* Category & Rating */}
+        <div className="flex items-center justify-between gap-2 mb-3">
+          <span className="text-xs font-semibold capitalize text-purple-600 bg-purple-50 px-3 py-1.5 rounded-full truncate">
+            {category}
+          </span>
+
+          <span className="flex items-center gap-1 text-sm font-semibold text-gray-600 shrink-0">
+            <svg
+              className="w-4 h-4 text-yellow-400 fill-yellow-400"
+              viewBox="0 0 24 24"
+            >
+              <path d="M12 2l3.1 6.3 6.9 1-5 4.9 1.2 6.8L12 17.8l-6.2 3.2L7 14.2 2 9.3l6.9-1L12 2z" />
+            </svg>
+            {rating?.toFixed(1) || "New"}
+          </span>
+        </div>
+
+        {/* Title */}
+        <h2 className="text-lg font-bold text-gray-900 leading-6 line-clamp-1 group-hover:text-purple-700 transition-colors duration-200">
+          {title}
+        </h2>
+
+        {/* Description */}
+        <p className="mt-2 text-sm leading-6 text-gray-500 line-clamp-2 min-h-12">
+          {description}
+        </p>
+
+        {/* Price & Action */}
+        <div className="mt-auto pt-5 flex items-end justify-between gap-3 border-t border-purple-50 mt-5">
+
+          <div>
+            <p className="text-xs text-gray-400 mb-1">
+              Price
+            </p>
+
+            <div className="flex items-center flex-wrap gap-2">
+              <p className="text-2xl font-extrabold text-purple-700">
+                ${price.toFixed(2)}
+              </p>
+
+              {discountPercentage > 0 && (
+                <p className="text-xs text-gray-400 line-through">
+                  ${oldPrice.toFixed(2)}
+                </p>
+              )}
+            </div>
+          </div>
+
+          <span className="inline-flex items-center justify-center gap-2 rounded-xl bg-purple-600 px-4 py-3 text-sm font-semibold text-white shadow-md shadow-purple-100 transition-all duration-300 group-hover:bg-purple-700">
+            View
+            <svg
+              className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-1"
+              fill="none"
+              stroke="currentColor"
+              strokeWidth={2}
+              viewBox="0 0 24 24"
+            >
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                d="M5 12h14m-7-7 7 7-7 7"
+              />
+            </svg>
+          </span>
+
+        </div>
+      </div>
+    </Link>
+  );
+};
+
+export default ProductCard;
