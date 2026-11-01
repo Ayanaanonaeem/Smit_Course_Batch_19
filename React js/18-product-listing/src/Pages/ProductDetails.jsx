@@ -5,9 +5,10 @@ import axios from "axios";
 import { useContext } from "react";
 import { CartContext } from "../Context/CartContext";
 
+
 const ProductDetails = () => {
   const { id } = useParams();
-  const { addToCart } = useContext(CartContext);
+  const { addToCart,cartCount  } = useContext(CartContext);
   const [product, setProduct] = useState([]);
   const [loading, setLoading] = useState(true);
   const [notfound, setNotFound] = useState(false);
@@ -35,6 +36,7 @@ const ProductDetails = () => {
       : product.price;
 
   return (
+    
     <section className="min-h-screen bg-[#faf8ff] py-10 sm:py-14">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {loading ? (
@@ -265,6 +267,36 @@ const ProductDetails = () => {
           </>
         )}
       </div>
+      {cartCount > 0 && (
+  <Link
+    to="/cart"
+    className="fixed bottom-6 right-6 z-50 flex items-center gap-3 bg-purple-700 hover:bg-purple-800 text-white px-6 py-4 rounded-full shadow-2xl shadow-purple-300 transition-all duration-300 hover:-translate-y-1"
+  >
+    <div className="relative">
+      <svg
+        className="w-6 h-6"
+        fill="none"
+        stroke="currentColor"
+        strokeWidth="2"
+        viewBox="0 0 24 24"
+      >
+        <path
+          strokeLinecap="round"
+          strokeLinejoin="round"
+          d="M3 3h2l2.4 12.4a2 2 0 002 1.6h8.8a2 2 0 002-1.6L22 7H6"
+        />
+        <circle cx="10" cy="21" r="1" />
+        <circle cx="19" cy="21" r="1" />
+      </svg>
+
+      <span className="absolute -top-3 -right-3 bg-white text-purple-700 text-xs font-bold w-5 h-5 rounded-full flex items-center justify-center">
+        {cartCount}
+      </span>
+    </div>
+
+    <span className="font-bold">View Cart</span>
+  </Link>
+)}
     </section>
   );
 };
