@@ -43,6 +43,8 @@ var myobj={
 }
 console.log(myobj.moew());
 
+console.log(obj["name"])
+
 
 
 
