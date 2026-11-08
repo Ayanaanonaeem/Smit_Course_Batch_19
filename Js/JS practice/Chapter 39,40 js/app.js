@@ -38,5 +38,10 @@ default:
 break; 
         
 }
+
+console.log("hello")
+console.log("hi")
+console.log("how are you");
+
 // This is mostly used when you have many conditions to check
 
