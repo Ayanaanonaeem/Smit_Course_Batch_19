@@ -1,4 +1,4 @@
-const user = {
+ const user = {
   profile: {
     name: "Ayan",
     age: 20,

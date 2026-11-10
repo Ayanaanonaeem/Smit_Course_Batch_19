@@ -33,7 +33,7 @@ let userJs2={
     isLoggedin:false
 
 }
-// console.log(userJs2);
+console.log(userJs2);
 
 
 

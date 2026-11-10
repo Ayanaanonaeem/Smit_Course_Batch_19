@@ -76,7 +76,9 @@ let userOne={
 let userTwo=userOne
 userTwo.name1="ayan"
 
-console.log(userOne[0]);
+console.log(userOne,"----79");
+
+console.log(userOne[0],79);
 console.log(userOne["name1"]); //for accesing keys in obj
 // console.log(userTwo);
 

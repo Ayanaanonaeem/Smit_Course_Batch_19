@@ -21,7 +21,8 @@ console.log(myString.charAt(1))
 
 
 // aur hum string ko slice bhi krsakte hain aur slice main - value bhi desakte hain
-console.log(myString.slice(-4,-2))
+console.log(myString.slice(0,3),"====24")
+
 
 
 console.log("hello")

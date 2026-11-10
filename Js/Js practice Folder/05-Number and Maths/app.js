@@ -2,7 +2,7 @@ let number = 41.934;
 
 console.log(number.toFixed(2)); //point ke bd ki value fixed krta hai 
 
-console.log(number.toPrecision(2)); //ye kitne number ap chte ho apne value main 
+console.log(number.toPrecision(3)); //ye kitne number ap chte ho apne value main 
 
 
 let number2=1000000

@@ -35,21 +35,20 @@ const ObjSub2={
     4:"d",
 }
 
-const ObjSub3=Object.assign({},ObjSub,ObjSub2) //For combining multiple Objects
+const ObjSub3=Object.assign(ObjSub,ObjSub2) //For combining multiple Objects
 console.log(ObjSub3);
 
 
 const ObjSub4={...ObjSub,...ObjSub2}
 console.log(ObjSub4);
 
-// for accessing object values 
+// for accessing object keys 
 
-console.log(Object.keys(ObjSub4));
+// console.log(Object.keys(ObjSub4));
 
 // for accessing object values 
 console.log(Object.values(ObjSub4));
 
-// for accessing object values 
+// for accessing object both keys and values 
 console.log(Object.entries(ObjSub4));
-
 

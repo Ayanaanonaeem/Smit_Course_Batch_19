@@ -3,7 +3,7 @@
 
 // var is a global scope variable
 var count;  //declare: varibale bnana
-var count=10 //initializa :value dena first time
+var count=10 //initialize :value dena first time
 var count=10 //reassign dobara value dena 
 
 var glow="land"
@@ -11,7 +11,7 @@ var glow="land"
     glow="iceland"
 }
 
-console.log(glow);
+console.log(glow,".....14");
 
 
 // 666666666666666666 let 666666666666666666666666666666
@@ -27,8 +27,8 @@ name ="jawaid"  //reassign krsakte hain krsakte hain
 
 let gender="female"
 {
-  let   gender="male"
-      
+    let gender="male"    
+         
 }
    
 
@@ -36,7 +36,7 @@ let gender="female"
 // console.log(blue());
  
 
-console.log(gender);
+console.log(gender,"...39");
 
 
 
