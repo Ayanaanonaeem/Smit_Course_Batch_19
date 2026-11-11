@@ -9,7 +9,7 @@ let arr2=["1","2","3","4"]
 // console.log(arr.indexOf("lichi"));// ye index btata hai agr woh maujood hai to agr nahi to -1 
 
 
-// console.log(arr.join());// string main convert krdeta hai array ko
+// console.log(arr.join(),"12");// string main convert krdeta hai array ko
 
 var newarr=arr.push("lichi")
 // console.log(newarr);//ye length return krta hai array ki
@@ -29,10 +29,10 @@ var myarr=["apple","mango","banana","orange"]
 
 var slicedArr=myarr.slice(1,3)//slice array main se chezen nikal deta hai but orignial array update nahi krta ye copy bnata hai
 
-console.log(slicedArr);
-console.log(myarr);
+// console.log(slicedArr);
+// console.log(myarr);
 
-var splicedArr=myarr.splice(1,3)//ye chezen nikalta hai but orignal array update krdeta hai
+var splicedArr=myarr.splice(1,3,1)//ye chezen nikalta hai but orignal array update krdeta hai
 console.log(splicedArr);
 console.log(myarr);
 
@@ -61,7 +61,7 @@ console.log(combineArr);
 var mynewArr=[1,2,4,5,[5,6],[7,[9,10],11]]
 
 var flatArr=mynewArr.flat(2)// ye array jo depth hota hai usko undar se ek flat array bnadeta hai
-console.log(flatArr);
+console.log(flatArr,64);
 
 console.log(Array.isArray("ayan"));//ye array check krne ke liye use hota hai
 console.log(Array.from("ayan"));//ye array banane ke liye use hota hai 

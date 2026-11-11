@@ -15,9 +15,9 @@
 let a=5
 
 if(true){
-    let a=7
+      a=7
 }
-console.log(a);//5
+console.log(a,"20");//5
 
 
 
@@ -27,6 +27,7 @@ console.log(a);//5
 // parent function apne inner variable ko yd nahi rakhsakta 
 // Example bache bare se icecream chen sakte hain lkn bare bachon se chenen to achi bt nahi hogi
 
+
 let lastname="naeem"
 function one() {
     const username="Ayan"
@@ -35,7 +36,7 @@ function one() {
         console.log(fullName);
         
     }
-    // console.log(fullname);
+    // console.log(fullname)
     two()
     
 }
@@ -48,8 +49,8 @@ one()
         let d= 4
     }
     
-    gian=5
-    console.log(gian);
+    d=5
+    console.log(d);
     
     
 }

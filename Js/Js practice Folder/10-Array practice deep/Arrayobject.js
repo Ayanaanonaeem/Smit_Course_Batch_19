@@ -12,7 +12,7 @@ let arr=[
 
 const myarr=arr.map((val)=>{
    if (val.id!==2) {
-    console.log(val);
+    // console.log(val);
     
    }
 })
@@ -32,4 +32,4 @@ var copyObj=arr.map((val)=>{
 })
 console.log(copyObj);
 
-console.log("hello")
+console.log(arr)

@@ -1,7 +1,8 @@
 // import Image from "next/image";
 
-export default function Card({obj,myobj}) {
+export default function Card({myobj,obj}) {
  
+
   
   
   

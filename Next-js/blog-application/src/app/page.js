@@ -18,6 +18,9 @@ export default function Home() {
       <Link href={"/dashboard"}>
       <p className="bg-purple-400 px-4 border rounded text-white">Dashboard</p>
       </Link>
+      <Link href={"/blogs"}>
+      <p className="bg-purple-400 px-4 border rounded text-white">Blogs</p>
+      </Link>
      
     </div>
 
