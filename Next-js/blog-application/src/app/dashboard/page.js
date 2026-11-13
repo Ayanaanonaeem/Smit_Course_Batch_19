@@ -4,7 +4,7 @@ import Link from "next/link";
 const Dashboard = () => {
   return (
     <div>
-      <h1>Dashboard</h1>
+     
       <div className="flex">
         <Link href={"/dashboard/setting"}>
           <p className="bg-purple-400 px-4 border rounded text-white">
