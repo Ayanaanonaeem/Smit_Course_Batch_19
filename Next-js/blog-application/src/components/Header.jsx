@@ -3,7 +3,7 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 const Header = () => {
     const pathname=usePathname()
-    console.log(pathname);
+    
     
   return (
     <header className="w-full bg-white shadow-sm">
@@ -21,6 +21,7 @@ const Header = () => {
           <li><Link href="/blogs" className={`${pathname==="/blogs"?"text-blue-600 font-bold":""}`}>Blogs</Link></li>
           <li><Link href="/contactus"className={`${pathname==="/contactus"?"text-blue-600 font-bold":""}`}>Contact</Link></li>
           <li><Link href="/dashboard"className={`${pathname==="/dashboard"?"text-blue-600 font-bold":""}`}>Dashboard</Link></li>
+          <li><Link href="/quotes"className={`${pathname==="/quotes"?"text-blue-600 font-bold":""}`}>Quotes</Link></li>
         </ul>
 
         {/* Login Button */}

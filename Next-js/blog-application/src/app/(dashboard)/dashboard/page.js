@@ -6,12 +6,12 @@ const Dashboard = () => {
     <div>
      
       <div className="flex">
-        <Link href={"/dashboard/setting"}>
+        <Link href={"/setting"}>
           <p className="bg-purple-400 px-4 border rounded text-white">
             settings
           </p>
         </Link>
-        <Link href={"/dashboard/profile"}>
+        <Link href={"/profile"}>
           <p className="bg-purple-400 px-4 border rounded text-white">
             profile
           </p>

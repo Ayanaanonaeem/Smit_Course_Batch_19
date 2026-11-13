@@ -1,8 +1,10 @@
 
 import Link from "next/link";
-
+import "../globals.css";
 const DashboardLayout = ({ children }) => {
   return (
+    <html>
+      <body>
     <div className="min-h-screen bg-gray-100">
 
       {/* Header */}
@@ -26,8 +28,8 @@ const DashboardLayout = ({ children }) => {
         <aside className="hidden md:block w-60 bg-white min-h-screen p-5 shadow-sm">
           <nav className="flex flex-col gap-5">
             <Link href="/dashboard">Overview</Link>
-            <Link href="/dashboard/profile">Profile</Link>
-            <Link href="/dashboard/setting">Settings</Link>
+            <Link href="/profile">Profile</Link>
+            <Link href="/setting">Settings</Link>
           </nav>
         </aside>
 
@@ -38,6 +40,9 @@ const DashboardLayout = ({ children }) => {
 
       </div>
     </div>
+
+      </body>
+    </html>
   );
 };
 
