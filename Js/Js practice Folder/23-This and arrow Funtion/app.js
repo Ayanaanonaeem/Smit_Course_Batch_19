@@ -2,8 +2,8 @@ const user={
     username:"Ayan",
     age:16,
     welcomeUser:function(){
-        // console.log(`${this.username} welcome to js`);
-        console.log(this);
+        console.log(`${this.username} welcome to js`);
+        // console.log(this);
         
         
     }
@@ -23,7 +23,7 @@ console.log(this);
 
 
 
-// function main this alag hota hai agr ismain this.uername likhte hain to iske context ko refer nahi krta 
+// function main this alag hota hai agr ismain this.username likhte hain to iske context ko refer nahi krta 
 function addOne() {
     let username="Ayan"
     console.log(this);

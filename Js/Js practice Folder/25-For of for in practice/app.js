@@ -23,8 +23,8 @@ const obj={
 
 
 for (const key in obj) {
-    const element = obj[key];
-    // console.log(element);
+    const element =key;
+    console.log(typeof element,"27");
    
 }
 
@@ -32,7 +32,7 @@ for (const key in obj) {
 
 // for in array aese chalega 
 for (const num in arr) {
-    console.log(arr[num]);
+    console.log(arr[num],"35");
     
     
     
@@ -47,3 +47,9 @@ for (const words in newStr) {
     
     
 }
+
+const obj3={
+    name:"Ayan",
+    age:"30"
+}
+// console.log(obj3[name])

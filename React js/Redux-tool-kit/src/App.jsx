@@ -1,39 +1,44 @@
-import { useState } from "react";
-import "./App.css";
+import React, { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { decrement, increment,incrementByNum} from "./redux/features/counterSlice";
+import { decrement, increment, incrementByNum } from "./redux/features/counterSlice";
 
-function App() {
+const App = () => {
+  const [num, setNum] = useState(0);
   const dispatch = useDispatch();
-  const count = useSelector((state) => state.counter.value);
-  const [num,setNum]=useState(0)
-
+  const count = useSelector((state) => state.value);
   return (
-    <>
+    <div>
       <div>
-        <h1 className="text-2xl mx-3">{count}</h1>
-        <input type="number" value={num} onChange={(e)=>setNum(e.target.value)} />
+        <h1 className="m-3">{count}</h1>
+        <input
+          className="m-3"
+          type="number"
+          value={num}
+          onChange={(e) => setNum(e.target.value)}
+        />
+      </div>
+      <div>
         <button
-          className="border-purple-400 bg-purple-300 px-3 border mx-3"
+          className="bg-purple-300 border-2 border-black px-4 mx-3"
           onClick={() => dispatch(increment())}
         >
           Increment
         </button>
         <button
-          className="border-purple-400 bg-purple-300 px-3 border mx-3"
           onClick={() => dispatch(decrement())}
+          className="bg-purple-300 border-2 border-black px-4"
         >
           Decrement
         </button>
         <button
-          className="border-purple-400 bg-purple-300 px-3 border mx-3"
           onClick={() => dispatch(incrementByNum(Number(num)))}
+          className="bg-purple-300 border-2 border-black px-4 mx-3"
         >
-          Increment by {num}
+          Increment by Num
         </button>
       </div>
-    </>
+    </div>
   );
-}
+};
 
 export default App;
