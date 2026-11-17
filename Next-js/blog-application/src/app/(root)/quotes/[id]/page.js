@@ -1,3 +1,4 @@
+import { notFound } from 'next/navigation'
 import React from 'react'
 
 const SingleQuote = async ({params}) => {
@@ -5,6 +6,10 @@ const SingleQuote = async ({params}) => {
     const {id}= await params
     let singlequote=await fetch(`https://dummyjson.com/quotes/${id}`,{cache:"force-cache"})
      singlequote=await singlequote.json()
+     
+    if(singlequote.message){
+      notFound()
+    }
   return (
    <>
         <h1 className='text-center text-2xl font-bold m-4'>Single Quotes</h1>

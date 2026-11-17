@@ -4,6 +4,10 @@ import React from 'react'
 
 const Quotes =async () => {
     let quotesData=await fetch('https://dummyjson.com/quotes',{cache:"force-cache"})
+    
+    if (!quotesData.ok) {
+      throw new Error("Api not Working")
+    }
     quotesData= await quotesData.json()
    
     
