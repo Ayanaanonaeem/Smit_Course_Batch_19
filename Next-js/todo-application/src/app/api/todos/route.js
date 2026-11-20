@@ -2,7 +2,7 @@ const todos=[
 {
   id:1,
   todo:"Task 1",
-  isCompleted:false
+  isCompleted:true
 },
 {
   id:2,
@@ -40,5 +40,27 @@ todos.push(obj)
     return Response.json({
        data:todos,
        message:"Todo added sucessfully"
+    })
+}
+export async function PUT(request) {
+const data= await request.json()
+ const findIdx=todos.findIndex((val)=>val.id==data.id)
+ todos[findIdx]=data
+
+
+    return Response.json({
+       data:todos,
+       message:"Todo updated sucessfully"
+    })
+}
+export async function DELETE(request) {
+const data= await request.json()
+ const findIdx=todos.findIndex((val)=>val.id==data.id)
+ todos.splice(findIdx,1)
+
+
+    return Response.json({
+       data:todos,
+       message:"Todo Deleted sucessfully"
     })
 }
