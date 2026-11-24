@@ -12,4 +12,5 @@ var div=document.getElementById("div")
 div.insertbefore(para,div.childNodes[0])
 
 console.log("Hello how are you")
+console.log("Hello how are you")
 
