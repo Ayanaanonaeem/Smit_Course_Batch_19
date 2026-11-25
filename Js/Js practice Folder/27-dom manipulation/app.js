@@ -19,12 +19,16 @@ myArr.map((val)=>{
     val.style.color="white"
 })
 
-// aur querySelector se .laga kr hum classes ko bhi lesakte hain aur id ko hash laga ke bhi nodelit hi milegi
+// aur querySelector se .laga kr hum classes ko bhi lesakte hain aur id ko hash laga ke bhi nodelist hi milegi
 const haai=document.querySelectorAll(".item")
 console.log(haai);
 
 // we can set get and ask question like this element has attribute or not 
 const attri=para2.getAttribute("id")
+console.log(attri);
+
 console.log(para2.hasAttribute("id"));
 para2.setAttribute("class","bye")
+
+
 
