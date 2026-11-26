@@ -1,8 +1,10 @@
-import { useState } from "react";
+import { useContext, useState } from "react";
 import { NavLink } from "react-router-dom";
+import { CartContext } from "../context/cartContextProvider";
 
 const Navbar = () => {
   const [menuOpen, setMenuOpen] = useState(false);
+  const {carts}=useContext(CartContext)
 
   const links = [
     { name: "Home", path: "/" },
@@ -109,7 +111,7 @@ const Navbar = () => {
               <span className="hidden sm:block text-sm font-medium">Cart</span>
 
               <span className="absolute -top-1 -right-1 w-5 h-5 rounded-full bg-[#AD8B73] text-white text-xs flex items-center justify-center">
-                2
+                {carts.length}
               </span>
             </NavLink>
 

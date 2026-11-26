@@ -27,12 +27,10 @@ let mainObj={
 // console.log(mainObj.fullName.userFullname.firstName);
 
 const ObjSub={
-    1:"a",
-    2:"b",
+   name:"Ayan"
 }
 const ObjSub2={
-    3:"c",
-    4:"d",
+    fname:"jawaid"
 }
 
 const ObjSub3=Object.assign(ObjSub,ObjSub2) //For combining multiple Objects
@@ -40,7 +38,7 @@ console.log(ObjSub3);
 
 
 const ObjSub4={...ObjSub,...ObjSub2}
-console.log(ObjSub4);
+console.log(ObjSub4,"54");
 
 // for accessing object keys 
 

@@ -1,13 +1,16 @@
-import React, { useEffect, useState } from 'react'
+import React, { useContext, useEffect, useState } from 'react'
 import { useParams, Link } from 'react-router-dom'
+import { CartContext } from '../context/cartContextProvider'
 
 const ProductDetail = () => {
   const { id } = useParams()
-
+  const {AddToCart,RemoveCart,minusCount,plusCount,carts}=useContext(CartContext)
   const [product, setProduct] = useState(null)
   const [loading, setLoading] = useState(true)
-  const [quantity, setQuantity] = useState(1)
+  const [counter,setCounter]=useState(0)
+  
   const [selectedImage, setSelectedImage] = useState('')
+  const [buttonDisable,setbuttonDisable]=useState(false)
 
   useEffect(() => {
     const fetchProduct = async () => {
@@ -19,6 +22,9 @@ const ProductDetail = () => {
 
         setProduct(data)
         setSelectedImage(data.thumbnail)
+
+      
+       
       } catch (error) {
         console.log(error)
       } finally {
@@ -27,8 +33,12 @@ const ProductDetail = () => {
     }
 
     fetchProduct()
+    
   }, [id])
-
+  
+  
+ 
+   
   if (loading) {
     return (
       <div className="min-h-screen bg-[#FFFBE9] flex items-center justify-center">
@@ -38,7 +48,8 @@ const ProductDetail = () => {
       </div>
     )
   }
-
+  
+  
   if (!product || !product.id) {
     return (
       <div className="min-h-screen bg-[#FFFBE9] flex flex-col items-center justify-center gap-5">
@@ -160,39 +171,23 @@ const ProductDetail = () => {
             </div>
 
             {/* Quantity */}
-            <div className="mt-8">
-
-              <p className="text-sm mb-3">Quantity</p>
-
-              <div className="flex items-center border border-[#CEAB93] w-fit">
-
-                <button
-                  onClick={() => setQuantity(prev => Math.max(1, prev - 1))}
-                  className="px-5 py-3 hover:bg-[#E3CAA5]/30 transition"
-                >
-                  −
-                </button>
-
-                <span className="px-5 py-3 min-w-14 text-center">
-                  {quantity}
-                </span>
-
-                <button
-                  onClick={() => setQuantity(prev => prev + 1)}
-                  className="px-5 py-3 hover:bg-[#E3CAA5]/30 transition"
-                >
-                  +
-                </button>
-
-              </div>
-            </div>
+         
 
             {/* Buttons */}
             <div className="flex flex-col sm:flex-row gap-4 mt-8">
 
               <button
-                disabled={product.stock <= 0}
+                disabled={buttonDisable}
                 className="flex-1 bg-[#AD8B73] text-[#FFFBE9] py-4 uppercase tracking-[2px] text-sm hover:bg-[#8F705A] transition disabled:opacity-50"
+                onClick={()=>{
+
+                  AddToCart(product) 
+                  setbuttonDisable(true)
+                }
+                 
+
+                  
+                }
               >
                 Add to Cart
               </button>
@@ -200,7 +195,7 @@ const ProductDetail = () => {
               <button
                 className="flex-1 border border-[#AD8B73] text-[#AD8B73] py-4 uppercase tracking-[2px] text-sm hover:bg-[#AD8B73] hover:text-white transition"
               >
-                ♡ Add to Wishlist
+                Remove Cart 
               </button>
 
             </div>
