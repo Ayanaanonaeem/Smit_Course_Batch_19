@@ -66,6 +66,7 @@ function App() {
   
   }
   
+  console.log(images)
   
   return (
     <div>
@@ -175,7 +176,7 @@ function App() {
         ) : null}
         <Masonry spacing={2} columns={{sm:1,md:2,lg:3,xl:4}}>
           {
-            images.map((item)=><img key={item.id} src={item.urls.thumb} 
+            images.map((item)=><img key={item.id} src={item.urls.regular} 
             onClick={()=>{
 
               setChosen(item)
